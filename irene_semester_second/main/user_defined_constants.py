@@ -1,0 +1,6 @@
+range_values = "range"
+normal = "normal"
+abnormal = "abnormal"
+min = "min"
+max = "max"
+unit = "unit"
