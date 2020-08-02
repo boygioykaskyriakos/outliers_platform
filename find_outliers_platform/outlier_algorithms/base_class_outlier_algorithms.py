@@ -15,12 +15,6 @@ class BaseClassOutlierAlgorithms(BaseClassAnalytic):
         SUBSET_SIZE, NODE, DATA_TYPE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT, TOTAL_PANICS, SUBSET
     ]
 
-    def __init__(self):
-        """
-        for now empty
-        """
-        pass
-
     def results_to_dict(
             self,
             static_n: int, whole_set: pd.DataFrame, temp_data: pd.Series, i: int, chebyshev_k=None) -> dict:

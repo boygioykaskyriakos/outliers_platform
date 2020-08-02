@@ -1,5 +1,5 @@
 import os
-from configparser import ConfigParser
+from configparser import ConfigParser, RawConfigParser
 
 from static_files.standard_variable_names import MAIN_CONFIG
 
@@ -31,3 +31,7 @@ class ReadIniFile:
     @classmethod
     def get_float(cls, field_name, parameter_name):
         return cls.get_data_type(cls.get_parameter(field_name, parameter_name), float)
+
+    @classmethod
+    def get_boolean(cls, field_name, parameter_name):
+        return cls.config.getboolean(field_name, parameter_name)
