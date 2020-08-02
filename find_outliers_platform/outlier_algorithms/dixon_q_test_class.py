@@ -2,20 +2,16 @@ import pandas as pd
 
 from copy import copy
 
-from base_class.base_class_analytic import BaseClassAnalytic
+from outlier_algorithms.base_class_outlier_algorithms import BaseClassOutlierAlgorithms
 from static_files.standard_variable_names import DATA_TYPE, NODE, VALUES, VALUE, KEY, \
     OUTLIER_NO, SUBSET, SUBSET_SIZE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT, TOTAL_PANICS, \
     HIGHER_RANGE_NUMBER, LOWER_RANGE_NUMBER, EXCEPTION
 from static_files.dixon_formulas import r0, r10, r11, r21, r22, generic_formula_dixon_q_test
 
 
-class FindOutlierDixon(BaseClassAnalytic):
-    OUTPUT_COLUMNS = [OUTLIER_NO, SUBSET_SIZE, SUBSET, NODE, DATA_TYPE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT]
-    OUTPUT_COLUMNS_METRICS = [SUBSET_SIZE, OUTLIER_NO]
-    OUTPUT_COLUMNS_METRICS_CRITICAL = [SUBSET_SIZE, TOTAL_PANICS]
-
+class FindOutlierDixon(BaseClassOutlierAlgorithms):
     def __init__(self, grouped_data: pd.DataFrame):
-        BaseClassAnalytic.__init__(self)
+        super().__init__()
 
         self.grouped_data = grouped_data
         self.static_n = self.read_ini_file_obj.get_int("DIXON_Q_TEST_SUBSET_VARIABLES", "static_n")
@@ -74,31 +70,6 @@ class FindOutlierDixon(BaseClassAnalytic):
 
         return confidence[get_number]
 
-    def print_to_console(self, row: dict, confidence_lvl: dict) -> None:
-        msg = "********** OUTLIER No " + str(row[OUTLIER_NO]) + " *******************" + "\n"
-        msg += "NODE: " + row[NODE] + ", DATA TYPE [" + row[DATA_TYPE] + "]\n"
-        msg += "INDEX[" + row[INDEX_FIRST_ELEMENT] + ", " + row[INDEX_LAST_ELEMENT] + "] = "
-        msg += row[SUBSET] + " " + "\n"
-        msg += confidence_lvl[KEY].upper() + ", SUBSET SIZE: " + row[SUBSET_SIZE] + "\n"
-
-        self.logger.info(msg)
-
-    @staticmethod
-    def results_to_dict(
-            static_n: int, whole_set: pd.DataFrame, temp_data: pd.Series, i: int) -> dict:
-
-        temp_dic_res = {
-            SUBSET_SIZE: str(static_n),
-            SUBSET: str(temp_data.tolist()),
-            NODE: str(whole_set[NODE].values[0]).replace("\t", ""),
-            DATA_TYPE: whole_set[DATA_TYPE].values[0],
-            INDEX_FIRST_ELEMENT: str(i+static_n),
-            INDEX_LAST_ELEMENT: str(i + 2*static_n - 1),
-
-        }
-
-        return temp_dic_res
-
     def get_appropriate_subset(
             self, static_n: int, grp: pd.DataFrame, confidence: dict, result: list) -> list:
 
@@ -116,19 +87,6 @@ class FindOutlierDixon(BaseClassAnalytic):
         ]
 
         return result
-
-    def format_metrics_critical(self, df: pd.DataFrame) -> pd.DataFrame:
-        df = df.groupby(
-            [SUBSET_SIZE, NODE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT]
-        ).count().reset_index()
-
-        df = df[df[OUTLIER_NO] > self.critical_value]
-        df = df.groupby(SUBSET_SIZE)[OUTLIER_NO].sum().reset_index()
-        df[OUTLIER_NO] = df[OUTLIER_NO] / 2
-        df[OUTLIER_NO] = df[OUTLIER_NO].astype(int)
-        df = df.rename(columns={OUTLIER_NO: TOTAL_PANICS})
-
-        return df
 
     def run(self, confidence_level: dict) -> None:
         """
@@ -164,7 +122,7 @@ class FindOutlierDixon(BaseClassAnalytic):
 
             df = pd.DataFrame(final_result)
             df_metrics = df.groupby([SUBSET_SIZE]).count().reset_index()
-            df_metrics_critical = self.format_metrics_critical(df)
+            df_metrics_critical = self.format_metrics_critical(df, self.critical_value)
 
         # save results to files
         self.save_file.run(df[self.OUTPUT_COLUMNS], confidence_level[KEY] + "_metrics_details")
