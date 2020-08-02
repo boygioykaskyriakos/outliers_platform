@@ -5,7 +5,8 @@ import math
 from copy import copy
 
 from outlier_algorithms.base_class_outlier_algorithms import BaseClassOutlierAlgorithms
-from static_files.standard_variable_names import VALUES, OUTLIER_NO, SUBSET_SIZE
+from static_files.standard_variable_names import VALUES, OUTLIER_NO, SUBSET_SIZE, SUBSET, MAX_VALUE, MIN_VALUE, \
+    ACCEPTABLE_DEVIATION, VALUE_TO_CHECK, OUTLIER_SCORE
 
 
 class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
@@ -19,6 +20,7 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
         self.probability_threshold = \
             self.read_ini_file_obj.get_float("CHEBYSHEV_SUBSET_VARIABLES", "probability_threshold")
         self.chebyshev_k = self.get_k()
+        self.OUTPUT_COLUMNS += [OUTLIER_SCORE, ACCEPTABLE_DEVIATION, VALUE_TO_CHECK, MIN_VALUE, MAX_VALUE]
 
     def get_k(self):
         if abs(self.probability_threshold) > 1:
@@ -72,7 +74,7 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
         # list comprehension with UDF optimized on pd.DataFrame
         # read it like: for i in range if condition is true then...
         result += [
-            self.results_to_dict(static_n, grp, test_set[i+static_n:i + 2*static_n].sort_values(), i)
+            self.results_to_dict(static_n, grp, test_set[i+static_n:i + 2*static_n], i, chebyshev_k=self.chebyshev_k)
             for i in range(len(test_set)-2*static_n + 1)
             if self.chebushev_algo(test_set[i+static_n:i + 2*static_n]) is True
         ]
@@ -88,7 +90,7 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
         # initialize local variables
         static_n = copy(self.static_n)
         final_result = []
-        df = pd.DataFrame(columns=self.OUTPUT_COLUMNS)
+        df_details = pd.DataFrame(columns=self.OUTPUT_COLUMNS)
         df_metrics = pd.DataFrame(columns=self.OUTPUT_COLUMNS_METRICS)
         df_metrics_critical = pd.DataFrame(columns=self.OUTPUT_COLUMNS_METRICS_CRITICAL)
 
@@ -108,11 +110,11 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
                 for row in final_result:
                     self.print_to_console(row)
 
-            df = pd.DataFrame(final_result)
-            df_metrics = df.groupby([SUBSET_SIZE]).count().reset_index()
-            df_metrics_critical = self.format_metrics_critical(df, self.critical_value)
+            df_details = pd.DataFrame(final_result)
+            df_metrics = df_details.groupby([SUBSET_SIZE]).count().reset_index()
+            df_metrics_critical = self.format_metrics_critical(df_details, self.critical_value)
 
         # save results to files
-        self.save_file.run(df[self.OUTPUT_COLUMNS], "metrics_details")
+        self.save_file.run(df_details[self.OUTPUT_COLUMNS], "metrics_details")
         self.save_file.run(df_metrics[self.OUTPUT_COLUMNS_METRICS], "metrics_summary")
         self.save_file.run(df_metrics_critical[self.OUTPUT_COLUMNS_METRICS_CRITICAL], "metrics_critical")

@@ -33,3 +33,13 @@ LOWER_NUMERATOR = "lower_numerator"
 LOWER_DENOMINATOR = "lower_denominator"
 UPPER_DENOMINATOR = "upper_denominator"
 EXCEPTION = "exception"
+
+INDEX_ORDER = "index_order"
+
+VALUE_TO_CHECK = "value_to_check"
+MIN_VALUE = "min_value"
+MAX_VALUE = "max_value"
+STD_DEV = "std_dev"
+ACCEPTABLE_DEVIATION = "acceptable_deviation"
+OUTLIER_SCORE = "outlier_score"
+
