@@ -39,7 +39,7 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
 
         acceptable_deviation = self.chebyshev_k * sample_std_dev
 
-        if sample_std_dev >= 1 and acceptable_deviation != 0:
+        if sample_std_dev > 1 and acceptable_deviation != 0:
             outlier_score = abs(value_to_check - sample_mean) / acceptable_deviation
 
         if outlier_score > 1:
@@ -47,26 +47,7 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
         else:
             return False
 
-    # IF NUMBER WITHIN SET
-    # def chebushev_algo(self, numbers: pd.Series) -> bool:
-    #     outlier_scores = pd.Series([0, 0])
-    #     # get mean and standard deviation
-    #     sample_mean = statistics.mean(numbers)
-    #     sample_std_dev = statistics.stdev(numbers)
-    #
-    #     acceptable_deviation = self.chebyshev_k * sample_std_dev
-    #
-    #     if sample_std_dev >= 1 and acceptable_deviation != 0:
-    #         outlier_scores = numbers.apply(
-    #             lambda value_to_check: abs(value_to_check - sample_mean) / acceptable_deviation
-    #         )
-    #
-    #     if (outlier_scores > 1).any():
-    #         return True
-    #     else:
-    #         return False
-
-    def get_appropriate_subset(
+    def get_results_per_subset(
             self, static_n: int, grp: pd.DataFrame, result: list) -> list:
 
         test_set = grp[VALUES]
@@ -83,7 +64,7 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
 
     def run(self) -> None:
         """
-        The main method of the class that saves to file the outliers according the dixon-q-test algorithm
+        The main method of the class that saves to file the outliers according the Chebyshev algorithm
         :return: None
         """
 
@@ -97,7 +78,7 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
         # apply logic main loop
         while static_n <= self.static_n_maximum:
             self.grouped_data.apply(
-                lambda grp: self.get_appropriate_subset(static_n, grp, final_result)
+                lambda grp: self.get_results_per_subset(static_n, grp, final_result)
             )
             static_n += 1
 
