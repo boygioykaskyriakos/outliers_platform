@@ -94,9 +94,6 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
             df_metrics_critical = self.format_metrics_critical(df, self.critical_value)
 
         # save results to files
-        self.save_file.run(df[self.OUTPUT_COLUMNS], "_metrics_details")
-        self.save_file.run(df_metrics[self.OUTPUT_COLUMNS_METRICS], "_metrics_summary")
-        self.save_file.run(
-            df_metrics_critical[self.OUTPUT_COLUMNS_METRICS_CRITICAL], "_metrics_critical"
-        )
-
+        self.save_file.run(df[self.OUTPUT_COLUMNS], "metrics_details")
+        self.save_file.run(df_metrics[self.OUTPUT_COLUMNS_METRICS], "metrics_summary")
+        self.save_file.run(df_metrics_critical[self.OUTPUT_COLUMNS_METRICS_CRITICAL], "metrics_critical")
