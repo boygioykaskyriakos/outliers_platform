@@ -27,23 +27,42 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
         k = math.sqrt(1. / (1. - self.probability_threshold))
         return k
 
-    def chebushev_algo(self, numbers: pd.Series) -> bool:
-        outlier_scores = pd.Series([0, 0])
+    def chebushev_algo(self, subset: pd.Series) -> bool:
+        outlier_score = 0
+        subset_statistics = subset.to_list()[:-1]
+        value_to_check = subset.to_list()[-1]
         # get mean and standard deviation
-        sample_mean = statistics.mean(numbers)
-        sample_std_dev = statistics.stdev(numbers)
+        sample_mean = statistics.mean(subset_statistics)
+        sample_std_dev = statistics.stdev(subset_statistics)
 
         acceptable_deviation = self.chebyshev_k * sample_std_dev
 
         if sample_std_dev >= 1 and acceptable_deviation != 0:
-            outlier_scores = numbers.apply(
-                lambda value_to_check: abs(value_to_check - sample_mean) / acceptable_deviation
-            )
+            outlier_score = abs(value_to_check - sample_mean) / acceptable_deviation
 
-        if (outlier_scores > 1).any():
+        if outlier_score > 1:
             return True
         else:
             return False
+
+    # IF NUMBER WITHIN SET
+    # def chebushev_algo(self, numbers: pd.Series) -> bool:
+    #     outlier_scores = pd.Series([0, 0])
+    #     # get mean and standard deviation
+    #     sample_mean = statistics.mean(numbers)
+    #     sample_std_dev = statistics.stdev(numbers)
+    #
+    #     acceptable_deviation = self.chebyshev_k * sample_std_dev
+    #
+    #     if sample_std_dev >= 1 and acceptable_deviation != 0:
+    #         outlier_scores = numbers.apply(
+    #             lambda value_to_check: abs(value_to_check - sample_mean) / acceptable_deviation
+    #         )
+    #
+    #     if (outlier_scores > 1).any():
+    #         return True
+    #     else:
+    #         return False
 
     def get_appropriate_subset(
             self, static_n: int, grp: pd.DataFrame, result: list) -> list:

@@ -5,21 +5,25 @@ from outlier_algorithms.dixon_q_test_class import FindOutlierDixon
 from outlier_algorithms.Chebyshev_class import FindOutlierChebyshev
 
 if __name__ == "__main__":
-    df_data = ReadCSVToDataFrame(field_name="DATA_SET_INFO", file_path="full_file_path", delimiter="delimiter").run()
-    df_data_grouped = df_data.groupby([NODE, DATA_TYPE])
-
-    # results for Dixon
-    find_outliers_dixon = FindOutlierDixon(grouped_data=df_data_grouped)
-
-    # results for q90
-    find_outliers_dixon.run(STATIC_Q90)
-
-    # results for q95
-    find_outliers_dixon.run(STATIC_Q95)
-
-    # results for q99
-    find_outliers_dixon.run(STATIC_Q99)
+    # df_data = ReadCSVToDataFrame(field_name="DATA_SET_INFO", file_path="full_file_path", delimiter="delimiter").run()
+    # df_data_grouped = df_data.groupby([NODE, DATA_TYPE])
+    #
+    # # results for Dixon
+    # find_outliers_dixon = FindOutlierDixon(grouped_data=df_data_grouped)
+    #
+    # # results for q90
+    # find_outliers_dixon.run(STATIC_Q90)
+    #
+    # # results for q95
+    # find_outliers_dixon.run(STATIC_Q95)
+    #
+    # # results for q99
+    # find_outliers_dixon.run(STATIC_Q99)
 
     # results for Chebyshev
+    df_data = ReadCSVToDataFrame(
+        field_name="DATA_SET_INFO_SECOND_TYPE", file_path="full_file_path", delimiter="delimiter").run(normal=False)
+    df_data_grouped = df_data.groupby([NODE, DATA_TYPE])
+
     FindOutlierChebyshev(grouped_data=df_data_grouped).run()
 
