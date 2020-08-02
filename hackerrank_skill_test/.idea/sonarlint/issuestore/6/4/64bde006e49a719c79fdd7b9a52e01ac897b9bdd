@@ -1,7 +1,0 @@
-
-ppython:S15425"LRename function "Max" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(²áÌ²ùÿÿÿÿ8ð¤å»¯.
-qpython:S1542"RRename function "buildTree" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(²—Æõ8ð¤å»¯.
-opython:S101	"LRename class "newNode" to match the regular expression ^[A-Z_][a-zA-Z0-9]+$.(¯Â×˜ùÿÿÿÿ8ð¤å»¯.
-=python:S125X"Remove this commented out code.(þØ‘Î8Ù¾ç»¯.
-wpython:S1176"TRename this local variable "Max" to match the regular expression ^[_a-z][a-z0-9_]*$.(Í¯âÜüÿÿÿÿ8ð¤å»¯.
-spython:S1542@"URename function "printInorder" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(²Ÿ‚A8ð¤å»¯.
