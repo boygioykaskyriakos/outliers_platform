@@ -23,20 +23,6 @@ A
 data/281nodes.csv,7\0\70bfa97f686e0fd39608f9296dcbf18e8dad3c8f
 >
 data/README.md,d\4\d49b8bf9aa35ef6fa8db2b1662ccfb55beac854e
-x
-Houtputfiles/FindOutlierDixon_confidence_90_per_cent_metrics_critical.csv,c\2\c23a284fe1a182a7265f1e677f6ccda5354a1148
-x
-Houtputfiles/FindOutlierDixon_confidence_95_per_cent_metrics_critical.csv,4\e\4e81796ee4eff7d10fb34168b40bcb5c6b3f1ee9
-w
-Goutputfiles/FindOutlierDixon_confidence_95_per_cent_metrics_details.csv,f\c\fc5c16af1faaf2c96f8acdd2e14e5bbd3a855e30
-w
-Goutputfiles/FindOutlierDixon_confidence_95_per_cent_metrics_summary.csv,a\0\a061bcf75339389172581c5fcef21827b1a46fda
-x
-Houtputfiles/FindOutlierDixon_confidence_99_per_cent_metrics_critical.csv,b\9\b912bd5b56b77e76ce893a402d705627978880d4
-w
-Goutputfiles/FindOutlierDixon_confidence_99_per_cent_metrics_details.csv,b\8\b889993230095dbce54f07408c8e350b72312147
-w
-Goutputfiles/FindOutlierDixon_confidence_99_per_cent_metrics_summary.csv,f\9\f981356eadf7d2737bf41948af70cf23e6a69cbe
 N
 static_files/dixon_formulas.py,0\7\07862f8b9754842d16afa885c3df3d0a36ab3805
 \
@@ -61,10 +47,6 @@ X
 data/21nodes.csv,e\2\e2a354a85162c8d98c5cbaca8ad3ac4a75f8567c
 L
 config_files/config_file.ini,e\5\e556c7adc95646b5ec591631d0cbe3de63f96f42
-w
-Goutputfiles/FindOutlierDixon_confidence_90_per_cent_metrics_details.csv,0\9\0988100ae2db341ef6cb939faaa2c199ecdea1cf
-w
-Goutputfiles/FindOutlierDixon_confidence_90_per_cent_metrics_summary.csv,6\7\67211e82611da5eb3985e98baa1ebbc42c9f85ea
 Y
 )data/different_data/log-with-outliers.csv,8\5\853cf3e4dcf137f8ce165af3f400e9f0e76bfe7b
 Q
@@ -73,10 +55,6 @@ Q
 main.py,f\1\f1bdda93d9a278e358509d498e17d97764c1fb29
 I
 utilities/save_to_file.py,f\e\feef1666bb1c1b3556a7590c6dd779f1cc9b92b6
-d
-4outputfiles/FindOutlierChebyshev_metrics_details.csv,d\1\d12f360b7bbdec342bcd1ba307d7e9f06ece2b0f
-e
-5outputfiles/FindOutlierChebyshev_metrics_critical.csv,c\5\c51a769a474864021d639cc86fb1d4be611a6e7a
 d
 4outputfiles/FindOutlierChebyshev_metrics_summary.csv,0\9\09fd686445dbb5e99908979ccb6a4b0eec7089d6
 c
@@ -87,3 +65,7 @@ U
 %utilities/read_csv_to_pd_dataframe.py,4\c\4c1668b5ec23be153727a1562d1641f843c27a9e
 U
 %outlier_algorithms/Chebyshev_class.py,8\9\899109005151ffde4b45f5eaceafde07798d092e
+D
+outputfiles/logs.log,6\c\6ca05f8d379bb21370bdabb411ce78e6fa3f785f
+m
+=outputfiles/FindOutlierChebyshev_metrics_details_critical.csv,8\2\821aff0272ffdbc9646a8237028289bdeb2a19b6
