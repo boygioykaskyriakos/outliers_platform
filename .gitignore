@@ -1,5 +1,7 @@
 
-find_outliers_platform/outputfiles/FindOutlierChebyshev_metrics_summary.csv
-find_outliers_platform/outputfiles/FindOutlierChebyshev_metrics_critical.csv
 *.pyc
 *.csv
+*.csv
+*.csv
+*.csv
+*.log
