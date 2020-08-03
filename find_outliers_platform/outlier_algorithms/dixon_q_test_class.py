@@ -100,9 +100,9 @@ class FindOutlierDixon(BaseClassOutlierAlgorithms):
         # initialize local variables
         static_n = copy(self.static_n)
         final_result = []
-        df = pd.DataFrame(columns=self.OUTPUT_COLUMNS)
-        df_metrics = pd.DataFrame(columns=self.OUTPUT_COLUMNS_METRICS)
-        df_metrics_critical = pd.DataFrame(columns=self.OUTPUT_COLUMNS_METRICS_CRITICAL)
+        df = pd.DataFrame(columns=self.OUTPUT_COLUMNS_DETAILS_GENERAL)
+        df_metrics = pd.DataFrame(columns=self.OUTPUT_COLUMNS_SUMMARY)
+        df_metrics_critical = pd.DataFrame(columns=self.OUTPUT_COLUMNS_DETAILS_CRITICAL)
 
         # apply logic main loop
         while static_n <= self.static_n_maximum:
@@ -125,9 +125,9 @@ class FindOutlierDixon(BaseClassOutlierAlgorithms):
             df_metrics_critical = self.format_metrics_critical(df, self.critical_value)
 
         # save results to files
-        self.save_file.run(df[self.OUTPUT_COLUMNS], confidence_level[KEY] + "_metrics_details")
-        self.save_file.run(df_metrics[self.OUTPUT_COLUMNS_METRICS], confidence_level[KEY] + "_metrics_summary")
+        self.save_file.run(df[self.OUTPUT_COLUMNS_DETAILS_GENERAL], confidence_level[KEY] + "_metrics_details")
+        self.save_file.run(df_metrics[self.OUTPUT_COLUMNS_SUMMARY], confidence_level[KEY] + "_metrics_summary")
         self.save_file.run(
-            df_metrics_critical[self.OUTPUT_COLUMNS_METRICS_CRITICAL], confidence_level[KEY] + "_metrics_critical"
+            df_metrics_critical[self.OUTPUT_COLUMNS_DETAILS_CRITICAL], confidence_level[KEY] + "_metrics_critical"
         )
 

@@ -9,11 +9,55 @@ from static_files.standard_variable_names import DATA_TYPE, NODE, KEY, \
 
 
 class BaseClassOutlierAlgorithms(BaseClassAnalytic):
-    OUTPUT_COLUMNS = [OUTLIER_NO, SUBSET_SIZE, SUBSET, NODE, DATA_TYPE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT]
-    OUTPUT_COLUMNS_METRICS = [SUBSET_SIZE, OUTLIER_NO]
-    OUTPUT_COLUMNS_METRICS_CRITICAL = [
+    OUTPUT_COLUMNS_DETAILS_GENERAL = \
+        [OUTLIER_NO, SUBSET_SIZE, SUBSET, NODE, DATA_TYPE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT]
+    OUTPUT_COLUMNS_DETAILS_CRITICAL = [
         SUBSET_SIZE, NODE, DATA_TYPE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT, TOTAL_PANICS, SUBSET
     ]
+    OUTPUT_COLUMNS_SUMMARY = [SUBSET_SIZE, OUTLIER_NO, TOTAL_PANICS]
+
+    @staticmethod
+    def format_metrics_critical(df_all_data: pd.DataFrame, critical_value: float) -> pd.DataFrame:
+        df = df_all_data.groupby(
+            [SUBSET_SIZE, NODE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT]
+        ).count().reset_index()
+
+        df = pd.merge(
+            df[[SUBSET_SIZE, NODE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT, OUTLIER_NO]],
+            df_all_data[[SUBSET_SIZE, NODE, DATA_TYPE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT, SUBSET]],
+            on=[SUBSET_SIZE, NODE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT],
+            how='left'
+        )
+
+        df = df[df[OUTLIER_NO] > critical_value]
+        df_per_node = df.groupby([SUBSET_SIZE, NODE])[OUTLIER_NO].sum().reset_index()
+
+        df = pd.merge(
+            df[[SUBSET_SIZE, NODE, DATA_TYPE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT, SUBSET]],
+            df_per_node,
+            on=[SUBSET_SIZE, NODE],
+            how='left'
+        )
+
+        df[OUTLIER_NO] = df[OUTLIER_NO] / 4
+        df[OUTLIER_NO] = df[OUTLIER_NO].astype(int)
+        df = df.rename(columns={OUTLIER_NO: TOTAL_PANICS})
+
+        return df
+
+    @staticmethod
+    def format_metrics_summary(df_metrics_general: pd.DataFrame, df_metrics_critical: pd.DataFrame) -> pd.DataFrame:
+        df_metrics_summary = df_metrics_general.groupby([SUBSET_SIZE]).count().reset_index()
+        df_metrics_critical = df_metrics_critical.groupby([SUBSET_SIZE]).count().reset_index()
+
+        df_metrics_summary = pd.merge(
+            df_metrics_summary[[SUBSET_SIZE, OUTLIER_NO]],
+            df_metrics_critical[[SUBSET_SIZE, TOTAL_PANICS]],
+            on=[SUBSET_SIZE],
+            how='left'
+        )
+
+        return df_metrics_summary
 
     def results_to_dict(
             self,
@@ -30,11 +74,12 @@ class BaseClassOutlierAlgorithms(BaseClassAnalytic):
 
         }
         if chebyshev_k is not None:
-            temp_dic_res = self.get_detailed_statistics(temp_dic_res, temp_data, chebyshev_k)
+            temp_dic_res = self.get_detailed_statistics_chebyshev(temp_dic_res, temp_data, chebyshev_k)
 
         return temp_dic_res
 
-    def get_detailed_statistics(self, temp_dic, temp_data, chebyshev_k):
+    @staticmethod
+    def get_detailed_statistics_chebyshev(temp_dic, temp_data, chebyshev_k):
         subset_statistics = temp_data[:-1]
         value_to_check = temp_data[-1]
         # get mean and standard deviation
@@ -62,35 +107,6 @@ class BaseClassOutlierAlgorithms(BaseClassAnalytic):
             msg += confidence_lvl[KEY].upper() + ", SUBSET SIZE: " + row[SUBSET_SIZE] + "\n"
 
         self.logger.info(msg)
-
-    @staticmethod
-    def format_metrics_critical(df_all_data: pd.DataFrame, critical_value: float) -> pd.DataFrame:
-        df = df_all_data.groupby(
-            [SUBSET_SIZE, NODE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT]
-        ).count().reset_index()
-
-        df = pd.merge(
-            df[[SUBSET_SIZE, NODE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT, OUTLIER_NO]],
-            df_all_data[[SUBSET_SIZE, NODE, DATA_TYPE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT, SUBSET]],
-            on=[SUBSET_SIZE, NODE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT],
-            how='left'
-        )
-
-        df = df[df[OUTLIER_NO] > critical_value]
-        df_per_node = df.groupby([SUBSET_SIZE, NODE])[OUTLIER_NO].sum().reset_index()
-
-        df = pd.merge(
-            df[[SUBSET_SIZE, NODE, DATA_TYPE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT, SUBSET]],
-            df_per_node,
-            on=[SUBSET_SIZE, NODE],
-            how='left'
-        )
-
-        df[OUTLIER_NO] = df[OUTLIER_NO] / 2
-        df[OUTLIER_NO] = df[OUTLIER_NO].astype(int)
-        df = df.rename(columns={OUTLIER_NO: TOTAL_PANICS})
-
-        return df
 
     def run(self, *args):
         raise NotImplementedError("method not implemented")
