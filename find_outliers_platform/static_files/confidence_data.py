@@ -1,6 +1,6 @@
 from static_files.standard_variable_names import KEY, VALUE
 
-STATIC_Q90 = {
+CONFIDENCE_DIXON_Q_TEST_STATIC_Q90 = {
     KEY: "confidence_90_per_cent",
     VALUE: (
         0.941, 0.765, 0.642, 0.560, 0.507, 0.468, 0.437,
@@ -10,7 +10,7 @@ STATIC_Q90 = {
     )
 }
 
-STATIC_Q95 = {
+CONFIDENCE_DIXON_Q_TEST_STATIC_Q95 = {
     KEY: "confidence_95_per_cent",
     VALUE: (
         0.970, 0.829, 0.710, 0.625, 0.568, 0.526, 0.493, 0.466,
@@ -20,7 +20,7 @@ STATIC_Q95 = {
     )
 }
 
-STATIC_Q99 = {
+CONFIDENCE_DIXON_Q_TEST_STATIC_Q99 = {
     KEY: "confidence_99_per_cent",
     VALUE: (
         0.994, 0.926, 0.821, 0.740, 0.680, 0.634, 0.598, 0.568,
@@ -28,4 +28,19 @@ STATIC_Q99 = {
         0.433, 0.425, 0.418, 0.411, 0.404, 0.399, 0.393, 0.388,
         0.384, 0.380, 0.376, 0.372
     )
+}
+
+CONFIDENCE_CHEBYSHEV_STATIC_Q90 = {
+    KEY: "confidence_90_per_cent",
+    VALUE: 0.9
+}
+
+CONFIDENCE_CHEBYSHEV_STATIC_Q95 = {
+    KEY: "confidence_95_per_cent",
+    VALUE: 0.95
+}
+
+CONFIDENCE_CHEBYSHEV_STATIC_Q99 = {
+    KEY: "confidence_99_per_cent",
+    VALUE: 0.99
 }

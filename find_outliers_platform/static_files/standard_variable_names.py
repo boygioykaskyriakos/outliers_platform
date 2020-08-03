@@ -43,3 +43,7 @@ STD_DEV = "std_dev"
 ACCEPTABLE_DEVIATION = "acceptable_deviation"
 OUTLIER_SCORE = "outlier_score"
 
+SAMPLE_MEAN = "sample_mean"
+SAMPLE_STD_DEV = "sample_std_dev"
+
+
