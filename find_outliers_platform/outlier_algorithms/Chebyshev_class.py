@@ -6,7 +6,7 @@ from copy import copy
 
 from outlier_algorithms.base_class_outlier_algorithms import BaseClassOutlierAlgorithms
 from static_files.standard_variable_names import VALUES, OUTLIER_NO, SUBSET_SIZE, SUBSET, MAX_VALUE, MIN_VALUE, \
-    ACCEPTABLE_DEVIATION, VALUE_TO_CHECK, OUTLIER_SCORE
+    ACCEPTABLE_DEVIATION, VALUE_TO_CHECK, OUTLIER_SCORE, NODE
 
 
 class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
@@ -92,6 +92,10 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
                     self.print_to_console(row)
 
             df_metrics_details_general = pd.DataFrame(final_result)
+            df_metrics_details_general[SUBSET_SIZE] = df_metrics_details_general[SUBSET_SIZE].astype(int)
+            df_metrics_details_general[NODE] = df_metrics_details_general[NODE].astype(int)
+            df_metrics_details_general = df_metrics_details_general.sort_values([SUBSET_SIZE, NODE])
+
             df_metrics_details_critical = self.format_metrics_critical(df_metrics_details_general, self.critical_value)
             df_metrics_summary = self.format_metrics_summary(df_metrics_details_general, df_metrics_details_critical)
 

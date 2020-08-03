@@ -43,6 +43,10 @@ class BaseClassOutlierAlgorithms(BaseClassAnalytic):
         df[OUTLIER_NO] = df[OUTLIER_NO].astype(int)
         df = df.rename(columns={OUTLIER_NO: TOTAL_PANICS})
 
+        df[SUBSET_SIZE] = df[SUBSET_SIZE].astype(int)
+        df[NODE] = df[NODE].astype(int)
+        df = df.sort_values([SUBSET_SIZE, NODE])
+
         return df
 
     @staticmethod
@@ -58,6 +62,8 @@ class BaseClassOutlierAlgorithms(BaseClassAnalytic):
             on=[SUBSET_SIZE],
             how='left'
         )
+        df_metrics_summary[SUBSET_SIZE] = df_metrics_summary[SUBSET_SIZE].astype(int)
+        df_metrics_summary = df_metrics_summary.sort_values([SUBSET_SIZE])
 
         return df_metrics_summary
 
