@@ -44,6 +44,28 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
         else:
             return False
 
+    def results_to_dict_chebyshev(self, static_n, grp, temp_data, i, chebyshev_k):
+        temp_dic = self.results_to_dict(static_n, grp, temp_data, i)
+
+        temp_data = temp_data.tolist()
+        subset_statistics = temp_data[:-1]
+        value_to_check = temp_data[-1]
+        # get mean and standard deviation
+        sample_mean = statistics.mean(subset_statistics)
+        sample_std_dev = statistics.stdev(subset_statistics)
+        acceptable_deviation = chebyshev_k * sample_std_dev
+        outlier_score = abs(value_to_check - sample_mean) / acceptable_deviation
+        min_value = sample_mean - acceptable_deviation
+        max_value = sample_mean + acceptable_deviation
+
+        temp_dic[OUTLIER_SCORE] = outlier_score
+        temp_dic[ACCEPTABLE_DEVIATION] = acceptable_deviation
+        temp_dic[VALUE_TO_CHECK] = value_to_check
+        temp_dic[MIN_VALUE] = min_value
+        temp_dic[MAX_VALUE] = max_value
+
+        return temp_dic
+
     def get_results_per_subset(
             self, static_n: int, grp: pd.DataFrame, result: list, chebyshev_k: float) -> list:
 
@@ -52,7 +74,7 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
         # list comprehension with UDF optimized on pd.DataFrame
         # read it like: for i in range if condition is true then...
         result += [
-            self.results_to_dict(static_n, grp, test_set[i+static_n:i + 2*static_n], i, chebyshev_k)
+            self.results_to_dict_chebyshev(static_n, grp, test_set[i+static_n:i + 2*static_n], i, chebyshev_k)
             for i in range(len(test_set)-2*static_n + 1)
             if self.chebushev_algo(test_set[i+static_n:i + 2*static_n], chebyshev_k) is True
         ]
