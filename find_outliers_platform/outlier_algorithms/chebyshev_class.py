@@ -111,13 +111,8 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
                 for row in final_result:
                     self.print_to_console(row)
 
-            df_metrics_details_general = pd.DataFrame(final_result)
-            df_metrics_details_general[SUBSET_SIZE] = df_metrics_details_general[SUBSET_SIZE].astype(int)
-            df_metrics_details_general[NODE] = df_metrics_details_general[NODE].astype(int)
-            df_metrics_details_general = df_metrics_details_general.sort_values([SUBSET_SIZE, NODE])
-
-            df_metrics_details_critical = self.format_metrics_critical(df_metrics_details_general, self.critical_value)
-            df_metrics_summary = self.format_metrics_summary(df_metrics_details_general, df_metrics_details_critical)
+            df_metrics_details_general, df_metrics_details_critical, df_metrics_summary = \
+                self.create_result_dfs(final_result, self.critical_value)
 
         # save results to files
         self.save_file.run(

@@ -3,8 +3,7 @@ import pandas as pd
 from copy import copy
 
 from outlier_algorithms.base_class_outlier_algorithms import BaseClassOutlierAlgorithms
-from static_files.standard_variable_names import DATA_TYPE, NODE, VALUES, VALUE, KEY, \
-    OUTLIER_NO, SUBSET, SUBSET_SIZE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT, TOTAL_PANICS, \
+from static_files.standard_variable_names import VALUES, VALUE, KEY, OUTLIER_NO, \
     HIGHER_RANGE_NUMBER, LOWER_RANGE_NUMBER, EXCEPTION
 from static_files.dixon_formulas import r0, r10, r11, r21, r22, generic_formula_dixon_q_test
 
@@ -100,9 +99,9 @@ class FindOutlierDixon(BaseClassOutlierAlgorithms):
         # initialize local variables
         static_n = copy(self.static_n)
         final_result = []
-        df = pd.DataFrame(columns=self.OUTPUT_COLUMNS_DETAILS_GENERAL)
-        df_metrics = pd.DataFrame(columns=self.OUTPUT_COLUMNS_SUMMARY)
-        df_metrics_critical = pd.DataFrame(columns=self.OUTPUT_COLUMNS_DETAILS_CRITICAL)
+        df_metrics_details_general = pd.DataFrame(columns=self.OUTPUT_COLUMNS_DETAILS_GENERAL)
+        df_metrics_summary = pd.DataFrame(columns=self.OUTPUT_COLUMNS_SUMMARY)
+        df_metrics_details_critical = pd.DataFrame(columns=self.OUTPUT_COLUMNS_DETAILS_CRITICAL)
 
         # apply logic main loop
         while static_n <= self.static_n_maximum:
@@ -120,14 +119,19 @@ class FindOutlierDixon(BaseClassOutlierAlgorithms):
                 for row in final_result:
                     self.print_to_console(row, confidence_level)
 
-            df = pd.DataFrame(final_result)
-            df_metrics = df.groupby([SUBSET_SIZE]).count().reset_index()
-            df_metrics_critical = self.format_metrics_critical(df, self.critical_value)
+            df_metrics_details_general, df_metrics_details_critical, df_metrics_summary = \
+                self.create_result_dfs(final_result, self.critical_value)
 
         # save results to files
-        self.save_file.run(df[self.OUTPUT_COLUMNS_DETAILS_GENERAL], confidence_level[KEY] + "_metrics_details")
-        self.save_file.run(df_metrics[self.OUTPUT_COLUMNS_SUMMARY], confidence_level[KEY] + "_metrics_summary")
         self.save_file.run(
-            df_metrics_critical[self.OUTPUT_COLUMNS_DETAILS_CRITICAL], confidence_level[KEY] + "_metrics_critical"
+            df_metrics_details_general[self.OUTPUT_COLUMNS_DETAILS_GENERAL],
+            confidence_level[KEY] + "_metrics_details_generic"
+        )
+        self.save_file.run(
+            df_metrics_details_critical[self.OUTPUT_COLUMNS_DETAILS_CRITICAL],
+            confidence_level[KEY] + "_metrics_details_critical"
+        )
+        self.save_file.run(
+            df_metrics_summary[self.OUTPUT_COLUMNS_SUMMARY], confidence_level[KEY] + "_metrics_summary"
         )
 
