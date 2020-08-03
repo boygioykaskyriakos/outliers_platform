@@ -4,8 +4,7 @@ import statistics
 
 from base_class.base_class_analytic import BaseClassAnalytic
 from static_files.standard_variable_names import DATA_TYPE, NODE, KEY, \
-    OUTLIER_NO, SUBSET, SUBSET_SIZE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT, TOTAL_PANICS, \
-    MAX_VALUE, MIN_VALUE, ACCEPTABLE_DEVIATION, VALUE_TO_CHECK, OUTLIER_SCORE
+    OUTLIER_NO, SUBSET, SUBSET_SIZE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT, TOTAL_PANICS
 
 
 class BaseClassOutlierAlgorithms(BaseClassAnalytic):
