@@ -5,7 +5,7 @@ from utilities.read_csv_to_pd_dataframe import ReadCSVToDataFrame
 from utilities.read_ini_file import ReadIniFile
 from static_files.standard_variable_names import NODE, DATA_TYPE
 from outlier_algorithms.dixon_q_test_class import FindOutlierDixon
-from outlier_algorithms.Chebyshev_class import FindOutlierChebyshev
+from outlier_algorithms.chebyshev_class import FindOutlierChebyshev
 
 if __name__ == "__main__":
     read_ini_obj = ReadIniFile()
