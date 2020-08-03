@@ -25,8 +25,6 @@ A
 data/README.md,d\4\d49b8bf9aa35ef6fa8db2b1662ccfb55beac854e
 N
 static_files/dixon_formulas.py,0\7\07862f8b9754842d16afa885c3df3d0a36ab3805
-\
-,static_files/dixon_q_test_confidence_data.py,b\7\b7caf50f4adee43232926021df9fcbacc9d87f4c
 E
 utilities/__init__.py,c\0\c053b2d798629ee85c3277cb9fabd180831ef046
 G
@@ -55,8 +53,6 @@ Q
 main.py,f\1\f1bdda93d9a278e358509d498e17d97764c1fb29
 I
 utilities/save_to_file.py,f\e\feef1666bb1c1b3556a7590c6dd779f1cc9b92b6
-d
-4outputfiles/FindOutlierChebyshev_metrics_summary.csv,0\9\09fd686445dbb5e99908979ccb6a4b0eec7089d6
 c
 3outlier_algorithms/base_class_outlier_algorithms.py,e\f\ef6eaeceafa9f6776821895e2999ae14e040b5e7
 W
@@ -67,5 +63,5 @@ U
 %outlier_algorithms/Chebyshev_class.py,8\9\899109005151ffde4b45f5eaceafde07798d092e
 D
 outputfiles/logs.log,6\c\6ca05f8d379bb21370bdabb411ce78e6fa3f785f
-m
-=outputfiles/FindOutlierChebyshev_metrics_details_critical.csv,8\2\821aff0272ffdbc9646a8237028289bdeb2a19b6
+O
+static_files/confidence_data.py,9\d\9da581c58183638e4da4b8a779181ab7c30fcadc
