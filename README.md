@@ -3,6 +3,10 @@ The current work was constructed to check data extracted from contiki OS cooja e
 
 PARAMETERS:
 The project contains an .ini file that needs to be configured (look into folder config_files for the *.ini. Change the path for the data file accordingly (full_file_path=...).
+Look for [ALGORITHMS_TO_RUN] and change the following booleans accordingly
+dixon_q_test = false
+chebyshev = true
+
 
 # Dixon Q-Test 
 Dixon's Q-test can easilly point out the outlier. Since it is light and easy to implement (it needs only a division), it is ideal to be running in the IoT part (Hybrid placement).
