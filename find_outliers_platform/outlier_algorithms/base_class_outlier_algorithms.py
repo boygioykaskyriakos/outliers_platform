@@ -48,6 +48,8 @@ class BaseClassOutlierAlgorithms(BaseClassAnalytic):
     @staticmethod
     def format_metrics_summary(df_metrics_general: pd.DataFrame, df_metrics_critical: pd.DataFrame) -> pd.DataFrame:
         df_metrics_summary = df_metrics_general.groupby([SUBSET_SIZE]).count().reset_index()
+
+        df_metrics_critical = df_metrics_critical[[SUBSET_SIZE, NODE, TOTAL_PANICS]].drop_duplicates().reset_index()
         df_metrics_critical = df_metrics_critical.groupby([SUBSET_SIZE]).count().reset_index()
 
         df_metrics_summary = pd.merge(
