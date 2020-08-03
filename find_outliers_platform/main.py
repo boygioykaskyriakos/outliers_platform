@@ -1,4 +1,6 @@
-from static_files.dixon_q_test_confidence_data import STATIC_Q95, STATIC_Q90, STATIC_Q99
+from static_files.confidence_data import CONFIDENCE_DIXON_Q_TEST_STATIC_Q95, CONFIDENCE_DIXON_Q_TEST_STATIC_Q90, \
+    CONFIDENCE_DIXON_Q_TEST_STATIC_Q99, CONFIDENCE_CHEBYSHEV_STATIC_Q90, CONFIDENCE_CHEBYSHEV_STATIC_Q95, \
+    CONFIDENCE_CHEBYSHEV_STATIC_Q99
 from utilities.read_csv_to_pd_dataframe import ReadCSVToDataFrame
 from utilities.read_ini_file import ReadIniFile
 from static_files.standard_variable_names import NODE, DATA_TYPE
@@ -17,13 +19,13 @@ if __name__ == "__main__":
         find_outliers_dixon = FindOutlierDixon(grouped_data=df_data_grouped)
 
         # results for q90
-        find_outliers_dixon.run(STATIC_Q90)
+        find_outliers_dixon.run(CONFIDENCE_DIXON_Q_TEST_STATIC_Q90)
 
         # results for q95
-        find_outliers_dixon.run(STATIC_Q95)
+        find_outliers_dixon.run(CONFIDENCE_DIXON_Q_TEST_STATIC_Q95)
 
         # results for q99
-        find_outliers_dixon.run(STATIC_Q99)
+        find_outliers_dixon.run(CONFIDENCE_DIXON_Q_TEST_STATIC_Q99)
 
     # results for Chebyshev
     find_outliers_chebyshev_switch = read_ini_obj.get_boolean("ALGORITHMS_TO_RUN", "chebyshev")
@@ -32,5 +34,12 @@ if __name__ == "__main__":
             field_name="DATA_SET_INFO_SECOND_TYPE", file_path="full_file_path", delimiter="delimiter").run(normal=False)
         df_data_grouped = df_data.groupby([NODE, DATA_TYPE])
 
-        FindOutlierChebyshev(grouped_data=df_data_grouped).run()
+        find_outliers_chebyshev = FindOutlierChebyshev(grouped_data=df_data_grouped)
+
+        find_outliers_chebyshev.run(CONFIDENCE_CHEBYSHEV_STATIC_Q90)
+
+        find_outliers_chebyshev.run(CONFIDENCE_CHEBYSHEV_STATIC_Q95)
+
+        find_outliers_chebyshev.run(CONFIDENCE_CHEBYSHEV_STATIC_Q99)
+
 
