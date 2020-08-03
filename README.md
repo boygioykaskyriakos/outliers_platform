@@ -30,9 +30,13 @@ The important thing is the NODE and the VALUES columns.
 /* Lower Outlier: Q = (x[2]-x[1])/(x[n]-x[1]) */					
 /* Higher Outlier: Q = (x[n]-x[n-1])/(x[n]-x[1]) */
 
+# Chebyshev's Inequality
+Chebyshev's Inequality is more complicated (and usually more accureate) than the above Dixon-Q. That is why it is run in the controller of an IoT network, since it needs to calculate among others the mean and the std.deviation of the samples. For the purposes of this project, we use the same input (integer data samples), trying to find the outliers with sample size of 7+1 (the data sample has already seven samples all considered normal, and the incoming value is tested as an outlier). For more information, look [here](https://ieeexplore.ieee.org/document/1559688).
+### Sensitivity parameters
+p1 was set to 0.10 and p2 was set to 0.01. Feel free to change them at will. Again, read [here](https://ieeexplore.ieee.org/document/1559688) for details.
 
 
-### date: 14-6-2020
+### date: 14-8-2020
 ### author: Kyriakos Vougioukas
 ### email: vougioukaskyriakos@live.com
 ### github username: boygioykaskyriakos
