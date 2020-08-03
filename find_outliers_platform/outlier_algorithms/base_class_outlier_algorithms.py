@@ -44,7 +44,10 @@ class BaseClassOutlierAlgorithms(BaseClassAnalytic):
         df = df.rename(columns={OUTLIER_NO: TOTAL_PANICS})
 
         df[SUBSET_SIZE] = df[SUBSET_SIZE].astype(int)
-        df[NODE] = df[NODE].astype(int)
+        try:
+            df[NODE] = df[NODE].astype(int)
+        except ValueError:
+            pass
         df = df.sort_values([SUBSET_SIZE, NODE])
 
         return df
@@ -67,10 +70,8 @@ class BaseClassOutlierAlgorithms(BaseClassAnalytic):
 
         return df_metrics_summary
 
-    def results_to_dict(
-            self,
-            static_n: int, whole_set: pd.DataFrame, temp_data: pd.Series, i: int, chebyshev_k=None) -> dict:
-
+    @staticmethod
+    def results_to_dict(static_n: int, whole_set: pd.DataFrame, temp_data: pd.Series, i: int) -> dict:
         temp_data = temp_data.tolist()
         temp_dic_res = {
             SUBSET_SIZE: str(static_n),
@@ -81,30 +82,24 @@ class BaseClassOutlierAlgorithms(BaseClassAnalytic):
             INDEX_LAST_ELEMENT: str(i + 2 * static_n - 1),
 
         }
-        if chebyshev_k is not None:
-            temp_dic_res = self.get_detailed_statistics_chebyshev(temp_dic_res, temp_data, chebyshev_k)
 
         return temp_dic_res
 
-    @staticmethod
-    def get_detailed_statistics_chebyshev(temp_dic, temp_data, chebyshev_k):
-        subset_statistics = temp_data[:-1]
-        value_to_check = temp_data[-1]
-        # get mean and standard deviation
-        sample_mean = statistics.mean(subset_statistics)
-        sample_std_dev = statistics.stdev(subset_statistics)
-        acceptable_deviation = chebyshev_k * sample_std_dev
-        outlier_score = abs(value_to_check - sample_mean) / acceptable_deviation
-        min_value = sample_mean - acceptable_deviation
-        max_value = sample_mean + acceptable_deviation
+    def create_result_dfs(self, final_result: dict, critical_value: int) -> tuple:
+        df_metrics_details_general = pd.DataFrame(final_result)
+        df_metrics_details_general[SUBSET_SIZE] = df_metrics_details_general[SUBSET_SIZE].astype(int)
 
-        temp_dic[OUTLIER_SCORE] = outlier_score
-        temp_dic[ACCEPTABLE_DEVIATION] = acceptable_deviation
-        temp_dic[VALUE_TO_CHECK] = value_to_check
-        temp_dic[MIN_VALUE] = min_value
-        temp_dic[MAX_VALUE] = max_value
+        try:
+            df_metrics_details_general[NODE] = df_metrics_details_general[NODE].astype(int)
+        except ValueError:
+            pass
 
-        return temp_dic
+        df_metrics_details_general = df_metrics_details_general.sort_values([SUBSET_SIZE, NODE])
+
+        df_metrics_details_critical = self.format_metrics_critical(df_metrics_details_general, critical_value)
+        df_metrics_summary = self.format_metrics_summary(df_metrics_details_general, df_metrics_details_critical)
+
+        return df_metrics_details_general, df_metrics_details_critical, df_metrics_summary
 
     def print_to_console(self, row: dict, confidence_lvl=None) -> None:
         msg = "********** OUTLIER No " + str(row[OUTLIER_NO]) + " *******************" + "\n"
