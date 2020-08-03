@@ -1,7 +1,7 @@
 
 *.pyc
 *.csv
-*.csv
-*.csv
-*.csv
 *.log
+find_outliers_platform/outputfiles/logs.log
+*.log
+*.pyc
