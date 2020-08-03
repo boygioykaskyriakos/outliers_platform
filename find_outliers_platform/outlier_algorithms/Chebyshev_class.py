@@ -5,8 +5,8 @@ import math
 from copy import copy
 
 from outlier_algorithms.base_class_outlier_algorithms import BaseClassOutlierAlgorithms
-from static_files.standard_variable_names import VALUES, OUTLIER_NO, SUBSET_SIZE, SUBSET, MAX_VALUE, MIN_VALUE, \
-    ACCEPTABLE_DEVIATION, VALUE_TO_CHECK, OUTLIER_SCORE, NODE
+from static_files.standard_variable_names import VALUES, OUTLIER_NO, SUBSET_SIZE, MAX_VALUE, MIN_VALUE, \
+    ACCEPTABLE_DEVIATION, VALUE_TO_CHECK, OUTLIER_SCORE, NODE, VALUE, KEY
 
 
 class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
@@ -48,27 +48,28 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
             return False
 
     def get_results_per_subset(
-            self, static_n: int, grp: pd.DataFrame, result: list) -> list:
+            self, static_n: int, grp: pd.DataFrame, result: list, chebyshev_k: float) -> list:
 
         test_set = grp[VALUES]
 
         # list comprehension with UDF optimized on pd.DataFrame
         # read it like: for i in range if condition is true then...
         result += [
-            self.results_to_dict(static_n, grp, test_set[i+static_n:i + 2*static_n], i, chebyshev_k=self.chebyshev_k)
+            self.results_to_dict(static_n, grp, test_set[i+static_n:i + 2*static_n], i, chebyshev_k)
             for i in range(len(test_set)-2*static_n + 1)
             if self.chebushev_algo(test_set[i+static_n:i + 2*static_n]) is True
         ]
 
         return result
 
-    def run(self) -> None:
+    def run(self, confidence_level: dict) -> None:
         """
         The main method of the class that saves to file the outliers according the Chebyshev algorithm
         :return: None
         """
 
         # initialize local variables
+        chebyshev_k = confidence_level[VALUE]
         static_n = copy(self.static_n)
         final_result = []
         df_metrics_details_general = pd.DataFrame(columns=self.OUTPUT_COLUMNS_DETAILS_GENERAL)
@@ -78,7 +79,7 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
         # apply logic main loop
         while static_n <= self.static_n_maximum:
             self.grouped_data.apply(
-                lambda grp: self.get_results_per_subset(static_n, grp, final_result)
+                lambda grp: self.get_results_per_subset(static_n, grp, final_result, chebyshev_k)
             )
             static_n += 1
 
@@ -100,7 +101,14 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
             df_metrics_summary = self.format_metrics_summary(df_metrics_details_general, df_metrics_details_critical)
 
         # save results to files
-        self.save_file.run(df_metrics_details_general[self.OUTPUT_COLUMNS_DETAILS_GENERAL], "metrics_details_generic")
         self.save_file.run(
-            df_metrics_details_critical[self.OUTPUT_COLUMNS_DETAILS_CRITICAL], "metrics_details_critical")
-        self.save_file.run(df_metrics_summary[self.OUTPUT_COLUMNS_SUMMARY], "metrics_summary")
+            df_metrics_details_general[self.OUTPUT_COLUMNS_DETAILS_GENERAL],
+            confidence_level[KEY] + "_metrics_details_generic"
+        )
+        self.save_file.run(
+            df_metrics_details_critical[self.OUTPUT_COLUMNS_DETAILS_CRITICAL],
+            confidence_level[KEY] + "_metrics_details_critical"
+        )
+        self.save_file.run(
+            df_metrics_summary[self.OUTPUT_COLUMNS_SUMMARY], confidence_level[KEY] + "_metrics_summary"
+        )
