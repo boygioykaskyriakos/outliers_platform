@@ -1,5 +1,4 @@
 import pandas as pd
-import statistics
 
 
 from base_class.base_class_analytic import BaseClassAnalytic
@@ -84,7 +83,7 @@ class BaseClassOutlierAlgorithms(BaseClassAnalytic):
 
         return temp_dic_res
 
-    def create_result_dfs(self, final_result: dict, critical_value: int) -> tuple:
+    def create_result_dfs(self, final_result: list, critical_value: int) -> tuple:
         df_metrics_details_general = pd.DataFrame(final_result)
         df_metrics_details_general[SUBSET_SIZE] = df_metrics_details_general[SUBSET_SIZE].astype(int)
 

@@ -69,7 +69,7 @@ class FindOutlierDixon(BaseClassOutlierAlgorithms):
 
         return confidence[get_number]
 
-    def get_appropriate_subset(
+    def get_results_per_subset(
             self, static_n: int, grp: pd.DataFrame, confidence: dict, result: list) -> list:
 
         test_set = grp[VALUES]
@@ -106,7 +106,7 @@ class FindOutlierDixon(BaseClassOutlierAlgorithms):
         # apply logic main loop
         while static_n <= self.static_n_maximum:
             self.grouped_data.apply(
-                lambda grp: self.get_appropriate_subset(static_n, grp, confidence_level, final_result)
+                lambda grp: self.get_results_per_subset(static_n, grp, confidence_level, final_result)
             )
             static_n += 1
 
