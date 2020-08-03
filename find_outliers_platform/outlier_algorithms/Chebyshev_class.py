@@ -20,7 +20,7 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
         self.probability_threshold = \
             self.read_ini_file_obj.get_float("CHEBYSHEV_SUBSET_VARIABLES", "probability_threshold")
         self.chebyshev_k = self.get_k()
-        self.OUTPUT_COLUMNS += [OUTLIER_SCORE, ACCEPTABLE_DEVIATION, VALUE_TO_CHECK, MIN_VALUE, MAX_VALUE]
+        self.OUTPUT_COLUMNS_DETAILS_GENERAL += [OUTLIER_SCORE, ACCEPTABLE_DEVIATION, VALUE_TO_CHECK, MIN_VALUE, MAX_VALUE]
 
     def get_k(self):
         if abs(self.probability_threshold) > 1:
@@ -71,9 +71,9 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
         # initialize local variables
         static_n = copy(self.static_n)
         final_result = []
-        df_details = pd.DataFrame(columns=self.OUTPUT_COLUMNS)
-        df_metrics = pd.DataFrame(columns=self.OUTPUT_COLUMNS_METRICS)
-        df_metrics_critical = pd.DataFrame(columns=self.OUTPUT_COLUMNS_METRICS_CRITICAL)
+        df_metrics_details_general = pd.DataFrame(columns=self.OUTPUT_COLUMNS_DETAILS_GENERAL)
+        df_metrics_summary = pd.DataFrame(columns=self.OUTPUT_COLUMNS_SUMMARY)
+        df_metrics_details_critical = pd.DataFrame(columns=self.OUTPUT_COLUMNS_DETAILS_CRITICAL)
 
         # apply logic main loop
         while static_n <= self.static_n_maximum:
@@ -91,11 +91,12 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
                 for row in final_result:
                     self.print_to_console(row)
 
-            df_details = pd.DataFrame(final_result)
-            df_metrics = df_details.groupby([SUBSET_SIZE]).count().reset_index()
-            df_metrics_critical = self.format_metrics_critical(df_details, self.critical_value)
+            df_metrics_details_general = pd.DataFrame(final_result)
+            df_metrics_details_critical = self.format_metrics_critical(df_metrics_details_general, self.critical_value)
+            df_metrics_summary = self.format_metrics_summary(df_metrics_details_general, df_metrics_details_critical)
 
         # save results to files
-        self.save_file.run(df_details[self.OUTPUT_COLUMNS], "metrics_details")
-        self.save_file.run(df_metrics[self.OUTPUT_COLUMNS_METRICS], "metrics_summary")
-        self.save_file.run(df_metrics_critical[self.OUTPUT_COLUMNS_METRICS_CRITICAL], "metrics_critical")
+        self.save_file.run(df_metrics_details_general[self.OUTPUT_COLUMNS_DETAILS_GENERAL], "metrics_details_generic")
+        self.save_file.run(
+            df_metrics_details_critical[self.OUTPUT_COLUMNS_DETAILS_CRITICAL], "metrics_details_critical")
+        self.save_file.run(df_metrics_summary[self.OUTPUT_COLUMNS_SUMMARY], "metrics_summary")
