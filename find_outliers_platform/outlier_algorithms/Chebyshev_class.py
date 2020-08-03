@@ -17,19 +17,16 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
         self.static_n = self.read_ini_file_obj.get_int("CHEBYSHEV_SUBSET_VARIABLES", "static_n")
         self.static_n_maximum = self.read_ini_file_obj.get_int("CHEBYSHEV_SUBSET_VARIABLES", "static_n_maximum")
         self.critical_value = self.read_ini_file_obj.get_int("CHEBYSHEV_SUBSET_VARIABLES", "critical_value")
-        self.probability_threshold = \
-            self.read_ini_file_obj.get_float("CHEBYSHEV_SUBSET_VARIABLES", "probability_threshold")
-        self.chebyshev_k = self.get_k()
         self.OUTPUT_COLUMNS_DETAILS_GENERAL += [OUTLIER_SCORE, ACCEPTABLE_DEVIATION, VALUE_TO_CHECK, MIN_VALUE, MAX_VALUE]
 
-    def get_k(self):
-        if abs(self.probability_threshold) > 1:
+    def get_chebyshev_k(self, probability_threshold):
+        if abs(probability_threshold) > 1:
             return 0
 
-        k = math.sqrt(1. / (1. - self.probability_threshold))
+        k = math.sqrt(1. / (1. - probability_threshold))
         return k
 
-    def chebushev_algo(self, subset: pd.Series) -> bool:
+    def chebushev_algo(self, subset: pd.Series, chebyshev_k: float) -> bool:
         outlier_score = 0
         subset_statistics = subset.to_list()[:-1]
         value_to_check = subset.to_list()[-1]
@@ -37,7 +34,7 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
         sample_mean = statistics.mean(subset_statistics)
         sample_std_dev = statistics.stdev(subset_statistics)
 
-        acceptable_deviation = self.chebyshev_k * sample_std_dev
+        acceptable_deviation = chebyshev_k * sample_std_dev
 
         if sample_std_dev > 1 and acceptable_deviation != 0:
             outlier_score = abs(value_to_check - sample_mean) / acceptable_deviation
@@ -57,7 +54,7 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
         result += [
             self.results_to_dict(static_n, grp, test_set[i+static_n:i + 2*static_n], i, chebyshev_k)
             for i in range(len(test_set)-2*static_n + 1)
-            if self.chebushev_algo(test_set[i+static_n:i + 2*static_n]) is True
+            if self.chebushev_algo(test_set[i+static_n:i + 2*static_n], chebyshev_k) is True
         ]
 
         return result
@@ -69,7 +66,7 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
         """
 
         # initialize local variables
-        chebyshev_k = confidence_level[VALUE]
+        chebyshev_k = self.get_chebyshev_k(confidence_level[VALUE])
         static_n = copy(self.static_n)
         final_result = []
         df_metrics_details_general = pd.DataFrame(columns=self.OUTPUT_COLUMNS_DETAILS_GENERAL)
