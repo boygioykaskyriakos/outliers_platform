@@ -1,0 +1,865 @@
+INFO     2020-08-02 21:46:01,237  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 1 *******************
+NODE: 10, DATA TYPE [CURRENT_icmp_recv]
+INDEX[8, 14] = [20.0, 20.0, 23.0, 23.0, 23.0, 23.0, 28.0] [21:4INFO     2020-08-02 21:46:01,239  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 2 *******************
+NODE: 10, DATA TYPE [CURRENT_icmp_recv]
+INDEX[17, 23] = [28.0, 31.0, 31.0, 31.0, 31.0, 31.0, 3[21:46:01]INFO     2020-08-02 21:46:01,240  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 3 *******************
+NODE: 10, DATA TYPE [CURRENT_icmp_recv]
+INDEX[21, 27] = [31.0, 31.0, 35.0, 35.0, 35.0, 35[21:46:01] {D:\INFO     2020-08-02 21:46:01,241  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 4 *******************
+NODE: 10, DATA TYPE [CURRENT_icmp_recv]
+INDEX[34, 40] = [46.0, 46.0, 49.0, 49.0, 49.[21:46:01] {D:\GitHuINFO     2020-08-02 21:46:01,242  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 5 *******************
+NODE: 10, DATA TYPE [CURRENT_icmp_recv]
+INDEX[38, 44] = [49.0, 49.0, 54.0, 54.0[21:46:01] {D:\GitHub\outINFO     2020-08-02 21:46:01,243  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 6 *******************
+NODE: 10, DATA TYPE [CURRENT_icmp_recv]
+INDEX[47, 53] = [61.0, 61.0, 64.0,[21:46:01] {D:\GitHub\outliersINFO     2020-08-02 21:46:01,244  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 7 *******************
+NODE: 10, DATA TYPE [CURRENT_icmp_recv]
+INDEX[51, 57] = [64.0, 64.0, [21:46:01] {D:\GitHub\outliers_platINFO     2020-08-02 21:46:01,245  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 8 *******************
+NODE: 10, DATA TYPE [CURRENT_icmp_recv]
+INDEX[69, 75] = [83.0, 8[21:46:01] {D:\GitHub\outliers_platform\INFO     2020-08-02 21:46:01,246  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 9 *******************
+NODE: 10, DATA TYPE [CURRENT_icmp_recv]
+INDEX[82, 88] = [95.[21:46:01] {D:\GitHub\outliers_platform\find_INFO     2020-08-02 21:46:01,247  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 10 *******************
+NODE: 10, DATA TYPE [CURRENT_icmp_recv]
+INDEX[86, 92] = [99[21:46:01] {D:\GitHub\outliers_platform\find_outliINFO     2020-08-02 21:46:01,248  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 11 *******************
+NODE: 10, DATA TYPE [CURRENT_icmp_recv]
+INDEX[95, 101] = [21:46:01] {D:\GitHub\outliers_platform\find_outliers_pINFO     2020-08-02 21:46:01,249  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 12 *******************
+NODE: 10, DATA TYPE [CURRENT_icmp_recv]
+INDEX[103, 10[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platfoINFO     2020-08-02 21:46:01,250  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 13 *******************
+NODE: 10, DATA TYPE [CURRENT_icmp_recv]
+INDEX[10[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utINFO     2020-08-02 21:46:01,251  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 14 *******************
+NODE: 10, DATA TYPE [CURRENT_icmp_recv]
+IND[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilitiINFO     2020-08-02 21:46:01,252  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 15 *******************
+NODE: 10, DATA TYPE [CURRENT_icmp_recv][21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\loINFO     2020-08-02 21:46:01,252  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 16 *******************
+NODE: 10, DATA TYPE [CUR[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_modINFO     2020-08-02 21:46:01,253  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 17 *******************
+NODE: 10, DATA TYPE [21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.pINFO     2020-08-02 21:46:01,255  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 18 *******************
+NODE: 10, DATA [21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68}INFO     2020-08-02 21:46:01,256  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 19 *******************
+NODE: 10, D[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFOINFO     2020-08-02 21:46:01,257  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 20 *******************
+NODE: 10, DATA[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+INFO     2020-08-02 21:46:01,258  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 21 *******************
+NODE: 10,[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ****INFO     2020-08-02 21:46:01,259  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 22 ****************[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ *********INFO     2020-08-02 21:46:01,260  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 23 ***********[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTINFO     2020-08-02 21:46:01,260  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 24 ******[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER INFO     2020-08-02 21:46:01,261  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 25 *******[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 26INFO     2020-08-02 21:46:01,262  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 26 *****[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 27 ****INFO     2020-08-02 21:46:01,263  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 27 [21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 28 *********INFO     2020-08-02 21:46:01,264  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER N[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 29 **************INFO     2020-08-02 21:46:01,265  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ *****[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 30 *******************INFO     2020-08-02 21:46:01,266  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ *[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 31 *******************
+NODINFO     2020-08-02 21:46:01,267  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run  [21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 32 *******************
+NODE: 13INFO     2020-08-02 21:46:01,268  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 33 *******************
+NODE: 13, DATINFO     2020-08-02 21:46:01,269  FindOutlierChebyshev.print_to_console in FindOutlierCheby[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 34 *******************
+NODE: 13, DATA TYPINFO     2020-08-02 21:46:01,270  FindOutlierChebyshev.print_to_console in FindOutlierChebysh[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 35 *******************
+NODE: 13, DATA TYPE [CUINFO     2020-08-02 21:46:01,270  FindOutlierChebyshev.print_to_console in FindOutlierCheb[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 36 *******************
+NODE: 13, DATA TYPE [CURRENTINFO     2020-08-02 21:46:01,271  FindOutlierChebyshev.print_to_console in FindOutlie[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 37 *******************
+NODE: 13, DATA TYPE [CURRENT_icmpINFO     2020-08-02 21:46:01,272  FindOutlierChebyshev.print_to_console in FindO[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 38 *******************
+NODE: 13, DATA TYPE [CURRENT_icmp_sentINFO     2020-08-02 21:46:01,273  FindOutlierChebyshev.print_to_c[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 39 *******************
+NODE: 13, DATA TYPE [CURRENT_icmp_sent]
+ININFO     2020-08-02 21:46:01,274  FindOutlierChebyshev.print_[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 40 *******************
+NODE: 13, DATA TYPE [CURRENT_icmp_sent]
+INDEX[2INFO     2020-08-02 21:46:01,275  FindOutlierChebyshev.p[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 41 *******************
+NODE: 13, DATA TYPE [CURRENT_icmp_sent]
+INDEX[48, 54INFO     2020-08-02 21:46:01,276  FindOutlierChebys[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 42 *******************
+NODE: 13, DATA TYPE [CURRENT_icmp_sent]
+INDEX[52, 58] = [INFO     2020-08-02 21:46:01,277  FindOutlierC[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 43 *******************
+NODE: 13, DATA TYPE [CURRENT_icmp_sent]
+INDEX[61, 67] = [93.0,INFO     2020-08-02 21:46:01,278  FindOutl[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 44 *******************
+NODE: 13, DATA TYPE [CURRENT_icmp_sent]
+INDEX[69, 75] = [103.0, 103INFO     2020-08-02 21:46:01,279  FindOutli[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 45 *******************
+NODE: 13, DATA TYPE [CURRENT_icmp_sent]
+INDEX[78, 84] = [111.0, 111.0, 1INFO     2020-08-02 21:46:01,280  Find[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 46 *******************
+NODE: 13, DATA TYPE [CURRENT_icmp_sent]
+INDEX[95, 101] = [133.0, 133.0, 137.0INFO     2020-08-02 21:46:01,280  [21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 47 *******************
+NODE: 13, DATA TYPE [CURRENT_icmp_sent]
+INDEX[108, 114] = [148.0, 148.0, 151.0, 15INFO     2020-08-02 21:46:01,2[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 48 *******************
+NODE: 13, DATA TYPE [CURRENT_icmp_sent]
+INDEX[117, 123] = [159.0, 159.0, 162.0, 162.0, INFO     2020-08-02 21:46[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 49 *******************
+NODE: 13, DATA TYPE [CURRENT_icmp_sent]
+INDEX[135, 141] = [177.0, 180.0, 180.0, 180.0, 180.0INFO     2020-08-02 [21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 50 *******************
+NODE: 13, DATA TYPE [CURRENT_icmp_sent]
+INDEX[139, 145] = [180.0, 180.0, 184.0, 184.0, 184.0, 184INFO     2020-0[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 51 *******************
+NODE: 2, DATA TYPE [CURRENT_icmp_recv]
+INDEX[9, 15] = [22.0, 22.0, 25.0, 25.0, 25.0, 25.0, 31.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 52 *******************
+NODE: 2, DATA TYPE [CURRENT_icmp_recv]
+INDEX[22, 28] = [35.0, 38.0, 38.0, 38.0, 38.0, 38.0, 43.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 53 *******************
+NODE: 2, DATA TYPE [CURRENT_icmp_recv]
+INDEX[39, 45] = [51.0, 51.0, 54.0, 54.0, 54.0, 54.0, 58.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 54 *******************
+NODE: 2, DATA TYPE [CURRENT_icmp_recv]
+INDEX[48, 54] = [58.0, 58.0, 61.0, 61.0, 61.0, 61.0, 67.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 55 *******************
+NODE: 2, DATA TYPE [CURRENT_icmp_recv]
+INDEX[74, 80] = [81.0, 81.0, 83.0, 83.0, 83.0, 83.0, 86.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 56 *******************
+NODE: 2, DATA TYPE [CURRENT_icmp_recv]
+INDEX[78, 84] = [83.0, 83.0, 86.0, 86.0, 86.0, 86.0, 91.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 57 *******************
+NODE: 2, DATA TYPE [CURRENT_icmp_recv]
+INDEX[91, 97] = [96.0, 96.0, 99.0, 99.0, 99.0, 99.0, 104.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 58 *******************
+NODE: 2, DATA TYPE [CURRENT_icmp_recv]
+INDEX[109, 115] = [111.0, 114.0, 114.0, 114.0, 114.0, 114.0, 120.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 59 *******************
+NODE: 2, DATA TYPE [CURRENT_icmp_recv]
+INDEX[122, 128] = [124.0, 127.0, 127.0, 127.0, 127.0, 127.0, 132.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 60 *******************
+NODE: 2, DATA TYPE [CURRENT_icmp_recv]
+INDEX[139, 145] = [138.0, 138.0, 141.0, 141.0, 141.0, 141.0, 145.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 61 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_recv]
+INDEX[7, 13] = [47.0, 55.0, 55.0, 55.0, 55.0, 55.0, 72.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 62 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_recv]
+INDEX[20, 26] = [83.0, 92.0, 92.0, 92.0, 92.0, 92.0, 104.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 63 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_recv]
+INDEX[50, 56] = [158.0, 158.0, 166.0, 166.0, 166.0, 166.0, 178.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 64 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_recv]
+INDEX[63, 69] = [188.0, 188.0, 198.0, 198.0, 198.0, 198.0, 211.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 65 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_recv]
+INDEX[72, 78] = [211.0, 217.0, 217.0, 217.0, 217.0, 217.0, 229.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 66 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_recv]
+INDEX[85, 91] = [238.0, 247.0, 247.0, 247.0, 247.0, 247.0, 259.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 67 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_recv]
+INDEX[98, 104] = [272.0, 281.0, 281.0, 281.0, 281.0, 281.0, 293.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 68 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_recv]
+INDEX[106, 112] = [293.0, 293.0, 299.0, 299.0, 299.0, 299.0, 310.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 69 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_recv]
+INDEX[124, 130] = [332.0, 340.0, 340.0, 340.0, 340.0, 340.0, 350.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 70 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_recv]
+INDEX[137, 143] = [362.0, 370.0, 370.0, 370.0, 370.0, 370.0, 380.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 71 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_sent]
+INDEX[7, 13] = [72.0, 87.0, 87.0, 87.0, 87.0, 87.0, 105.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 72 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_sent]
+INDEX[20, 26] = [119.0, 127.0, 127.0, 127.0, 127.0, 127.0, 139.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 73 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_sent]
+INDEX[37, 43] = [165.0, 165.0, 174.0, 174.0, 174.0, 174.0, 188.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 74 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_sent]
+INDEX[50, 56] = [198.0, 198.0, 205.0, 205.0, 205.0, 205.0, 218.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 75 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_sent]
+INDEX[72, 78] = [251.0, 260.0, 260.0, 260.0, 260.0, 260.0, 271.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 76 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_sent]
+INDEX[80, 86] = [271.0, 271.0, 279.0, 279.0, 279.0, 279.0, 290.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 77 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_sent]
+INDEX[85, 91] = [279.0, 290.0, 290.0, 290.0, 290.0, 290.0, 303.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 78 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_sent]
+INDEX[98, 104] = [314.0, 324.0, 324.0, 324.0, 324.0, 324.0, 338.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 79 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_sent]
+INDEX[106, 112] = [338.0, 338.0, 344.0, 344.0, 344.0, 344.0, 356.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 80 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_sent]
+INDEX[111, 117] = [344.0, 356.0, 356.0, 356.0, 356.0, 356.0, 370.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 81 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_sent]
+INDEX[124, 130] = [381.0, 388.0, 388.0, 388.0, 388.0, 388.0, 398.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 82 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_sent]
+INDEX[128, 134] = [388.0, 388.0, 398.0, 398.0, 398.0, 398.0, 414.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 83 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_sent]
+INDEX[137, 143] = [414.0, 421.0, 421.0, 421.0, 421.0, 421.0, 431.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 84 *******************
+NODE: 3, DATA TYPE [CURRENT_icmp_sent]
+INDEX[141, 147] = [421.0, 421.0, 431.0, 431.0, 431.0, 431.0, 444.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 85 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_recv]
+INDEX[18, 24] = [28.0, 31.0, 31.0, 31.0, 31.0, 31.0, 36.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 86 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_recv]
+INDEX[31, 37] = [41.0, 41.0, 44.0, 44.0, 44.0, 44.0, 48.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 87 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_recv]
+INDEX[48, 54] = [56.0, 56.0, 58.0, 58.0, 58.0, 58.0, 63.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 88 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_recv]
+INDEX[61, 67] = [66.0, 66.0, 69.0, 69.0, 69.0, 69.0, 73.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 89 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_recv]
+INDEX[79, 85] = [79.0, 82.0, 82.0, 82.0, 82.0, 82.0, 86.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 90 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_recv]
+INDEX[96, 102] = [94.0, 94.0, 97.0, 97.0, 97.0, 97.0, 102.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 91 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_recv]
+INDEX[113, 119] = [108.0, 108.0, 111.0, 111.0, 111.0, 111.0, 115.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 92 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_recv]
+INDEX[122, 128] = [115.0, 115.0, 117.0, 117.0, 117.0, 117.0, 121.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 93 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_recv]
+INDEX[135, 141] = [126.0, 126.0, 129.0, 129.0, 129.0, 129.0, 134.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 94 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_sent]
+INDEX[9, 15] = [47.0, 47.0, 52.0, 52.0, 52.0, 52.0, 59.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 95 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_sent]
+INDEX[22, 28] = [63.0, 63.0, 66.0, 66.0, 66.0, 66.0, 71.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 96 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_sent]
+INDEX[31, 37] = [71.0, 71.0, 73.0, 73.0, 73.0, 73.0, 77.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 97 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_sent]
+INDEX[53, 59] = [90.0, 94.0, 94.0, 94.0, 94.0, 94.0, 100.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 98 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_sent]
+INDEX[61, 67] = [100.0, 100.0, 102.0, 102.0, 102.0, 102.0, 107.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 99 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_sent]
+INDEX[74, 80] = [112.0, 112.0, 114.0, 114.0, 114.0, 114.0, 119.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 100 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_sent]
+INDEX[83, 89] = [119.0, 119.0, 123.0, 123.0, 123.0, 123.0, 129.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 101 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_sent]
+INDEX[96, 102] = [131.0, 131.0, 134.0, 134.0, 134.0, 134.0, 141.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 102 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_sent]
+INDEX[109, 115] = [144.0, 144.0, 147.0, 147.0, 147.0, 147.0, 153.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 103 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_sent]
+INDEX[122, 128] = [158.0, 158.0, 161.0, 161.0, 161.0, 161.0, 165.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 104 *******************
+NODE: 4, DATA TYPE [CURRENT_icmp_sent]
+INDEX[135, 141] = [170.0, 170.0, 172.0, 172.0, 172.0, 172.0, 183.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 105 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_recv]
+INDEX[7, 13] = [38.0, 38.0, 44.0, 44.0, 44.0, 44.0, 60.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 106 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_recv]
+INDEX[20, 26] = [69.0, 74.0, 74.0, 74.0, 74.0, 74.0, 83.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 107 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_recv]
+INDEX[37, 43] = [104.0, 104.0, 110.0, 110.0, 110.0, 110.0, 121.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 108 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_recv]
+INDEX[55, 61] = [137.0, 145.0, 145.0, 145.0, 145.0, 145.0, 155.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 109 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_recv]
+INDEX[85, 91] = [197.0, 197.0, 204.0, 204.0, 204.0, 204.0, 214.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 110 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_recv]
+INDEX[98, 104] = [225.0, 225.0, 232.0, 232.0, 232.0, 232.0, 242.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 111 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_recv]
+INDEX[107, 113] = [242.0, 248.0, 248.0, 248.0, 248.0, 248.0, 258.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 112 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_recv]
+INDEX[128, 134] = [285.0, 285.0, 292.0, 292.0, 292.0, 292.0, 303.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 113 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_sent]
+INDEX[7, 13] = [62.0, 62.0, 71.0, 71.0, 71.0, 71.0, 85.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 114 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_sent]
+INDEX[20, 26] = [94.0, 97.0, 97.0, 97.0, 97.0, 97.0, 104.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 115 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_sent]
+INDEX[37, 43] = [120.0, 120.0, 125.0, 125.0, 125.0, 125.0, 132.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 116 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_sent]
+INDEX[42, 48] = [125.0, 132.0, 132.0, 132.0, 132.0, 132.0, 141.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 117 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_sent]
+INDEX[50, 56] = [141.0, 141.0, 145.0, 145.0, 145.0, 145.0, 154.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 118 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_sent]
+INDEX[63, 69] = [161.0, 161.0, 167.0, 167.0, 167.0, 167.0, 176.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 119 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_sent]
+INDEX[72, 78] = [176.0, 176.0, 180.0, 180.0, 180.0, 180.0, 187.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 120 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_sent]
+INDEX[81, 87] = [187.0, 192.0, 192.0, 192.0, 192.0, 192.0, 199.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 121 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_sent]
+INDEX[98, 104] = [216.0, 216.0, 222.0, 222.0, 222.0, 222.0, 231.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 122 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_sent]
+INDEX[107, 113] = [231.0, 236.0, 236.0, 236.0, 236.0, 236.0, 242.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 123 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_sent]
+INDEX[111, 117] = [236.0, 236.0, 242.0, 242.0, 242.0, 242.0, 252.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 124 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_sent]
+INDEX[120, 126] = [252.0, 257.0, 257.0, 257.0, 257.0, 257.0, 264.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 125 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_sent]
+INDEX[128, 134] = [264.0, 264.0, 270.0, 270.0, 270.0, 270.0, 279.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 126 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_sent]
+INDEX[137, 143] = [279.0, 279.0, 285.0, 285.0, 285.0, 285.0, 296.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 127 *******************
+NODE: 5, DATA TYPE [CURRENT_icmp_sent]
+INDEX[146, 152] = [296.0, 296.0, 301.0, 301.0, 301.0, 301.0, 308.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 128 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_recv]
+INDEX[13, 19] = [27.0, 27.0, 30.0, 30.0, 30.0, 30.0, 34.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 129 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_recv]
+INDEX[22, 28] = [34.0, 38.0, 38.0, 38.0, 38.0, 38.0, 43.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 130 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_recv]
+INDEX[26, 32] = [38.0, 38.0, 43.0, 43.0, 43.0, 43.0, 50.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 131 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_recv]
+INDEX[39, 45] = [54.0, 54.0, 59.0, 59.0, 59.0, 59.0, 66.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 132 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_recv]
+INDEX[57, 63] = [78.0, 83.0, 83.0, 83.0, 83.0, 83.0, 90.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 133 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_recv]
+INDEX[70, 76] = [96.0, 100.0, 100.0, 100.0, 100.0, 100.0, 107.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 134 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_recv]
+INDEX[83, 89] = [111.0, 116.0, 116.0, 116.0, 116.0, 116.0, 122.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 135 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_recv]
+INDEX[96, 102] = [128.0, 133.0, 133.0, 133.0, 133.0, 133.0, 140.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 136 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_recv]
+INDEX[109, 115] = [145.0, 150.0, 150.0, 150.0, 150.0, 150.0, 156.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 137 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_recv]
+INDEX[144, 150] = [188.0, 193.0, 193.0, 193.0, 193.0, 193.0, 200.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 138 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_sent]
+INDEX[17, 23] = [42.0, 42.0, 45.0, 45.0, 45.0, 45.0, 55.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 139 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_sent]
+INDEX[35, 41] = [67.0, 67.0, 70.0, 70.0, 70.0, 70.0, 76.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 140 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_sent]
+INDEX[57, 63] = [88.0, 92.0, 92.0, 92.0, 92.0, 92.0, 97.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 141 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_sent]
+INDEX[87, 93] = [117.0, 117.0, 120.0, 120.0, 120.0, 120.0, 125.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 142 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_sent]
+INDEX[96, 102] = [125.0, 129.0, 129.0, 129.0, 129.0, 129.0, 134.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 143 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_sent]
+INDEX[104, 110] = [134.0, 134.0, 137.0, 137.0, 137.0, 137.0, 142.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 144 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_sent]
+INDEX[113, 119] = [142.0, 142.0, 145.0, 145.0, 145.0, 145.0, 150.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 145 *******************
+NODE: 6, DATA TYPE [CURRENT_icmp_sent]
+INDEX[139, 145] = [167.0, 167.0, 169.0, 169.0, 169.0, 169.0, 173.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 146 *******************
+NODE: 7, DATA TYPE [CURRENT_icmp_recv]
+INDEX[25, 31] = [44.0, 44.0, 49.0, 49.0, 49.0, 49.0, 56.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 147 *******************
+NODE: 7, DATA TYPE [CURRENT_icmp_recv]
+INDEX[38, 44] = [61.0, 61.0, 64.0, 64.0, 64.0, 64.0, 69.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 148 *******************
+NODE: 7, DATA TYPE [CURRENT_icmp_recv]
+INDEX[56, 62] = [79.0, 82.0, 82.0, 82.0, 82.0, 82.0, 89.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 149 *******************
+NODE: 7, DATA TYPE [CURRENT_icmp_recv]
+INDEX[69, 75] = [94.0, 98.0, 98.0, 98.0, 98.0, 98.0, 104.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 150 *******************
+NODE: 7, DATA TYPE [CURRENT_icmp_recv]
+INDEX[86, 92] = [114.0, 114.0, 118.0, 118.0, 118.0, 118.0, 125.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 151 *******************
+NODE: 7, DATA TYPE [CURRENT_icmp_sent]
+INDEX[25, 31] = [58.0, 58.0, 60.0, 60.0, 60.0, 60.0, 63.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 152 *******************
+NODE: 7, DATA TYPE [CURRENT_icmp_sent]
+INDEX[60, 66] = [78.0, 78.0, 80.0, 80.0, 80.0, 80.0, 84.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 153 *******************
+NODE: 7, DATA TYPE [CURRENT_icmp_sent]
+INDEX[103, 109] = [101.0, 101.0, 103.0, 103.0, 103.0, 103.0, 106.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 154 *******************
+NODE: 7, DATA TYPE [CURRENT_icmp_sent]
+INDEX[108, 114] = [103.0, 106.0, 106.0, 106.0, 106.0, 106.0, 110.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 155 *******************
+NODE: 7, DATA TYPE [CURRENT_icmp_sent]
+INDEX[125, 131] = [114.0, 114.0, 116.0, 116.0, 116.0, 116.0, 119.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 156 *******************
+NODE: 7, DATA TYPE [CURRENT_icmp_sent]
+INDEX[142, 148] = [122.0, 122.0, 124.0, 124.0, 124.0, 124.0, 127.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 157 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_recv]
+INDEX[40, 46] = [60.0, 60.0, 62.0, 62.0, 62.0, 62.0, 68.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 158 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_recv]
+INDEX[53, 59] = [72.0, 72.0, 74.0, 74.0, 74.0, 74.0, 77.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 159 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_recv]
+INDEX[62, 68] = [77.0, 80.0, 80.0, 80.0, 80.0, 80.0, 84.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 160 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_recv]
+INDEX[70, 76] = [84.0, 84.0, 87.0, 87.0, 87.0, 87.0, 91.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 161 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_recv]
+INDEX[88, 94] = [99.0, 102.0, 102.0, 102.0, 102.0, 102.0, 106.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 162 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_recv]
+INDEX[101, 107] = [110.0, 113.0, 113.0, 113.0, 113.0, 113.0, 117.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 163 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_recv]
+INDEX[109, 115] = [117.0, 117.0, 120.0, 120.0, 120.0, 120.0, 125.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 164 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_recv]
+INDEX[118, 124] = [125.0, 125.0, 128.0, 128.0, 128.0, 128.0, 132.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 165 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_recv]
+INDEX[131, 137] = [137.0, 137.0, 140.0, 140.0, 140.0, 140.0, 145.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 166 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_sent]
+INDEX[10, 16] = [30.0, 35.0, 35.0, 35.0, 35.0, 35.0, 41.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 167 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_sent]
+INDEX[31, 37] = [72.0, 72.0, 75.0, 75.0, 75.0, 75.0, 80.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 168 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_sent]
+INDEX[40, 46] = [80.0, 80.0, 82.0, 82.0, 82.0, 82.0, 86.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 169 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_sent]
+INDEX[57, 63] = [92.0, 92.0, 94.0, 94.0, 94.0, 94.0, 97.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 170 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_sent]
+INDEX[62, 68] = [94.0, 97.0, 97.0, 97.0, 97.0, 97.0, 102.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 171 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_sent]
+INDEX[70, 76] = [102.0, 102.0, 104.0, 104.0, 104.0, 104.0, 108.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 172 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_sent]
+INDEX[79, 85] = [108.0, 108.0, 111.0, 111.0, 111.0, 111.0, 115.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 173 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_sent]
+INDEX[109, 115] = [130.0, 130.0, 133.0, 133.0, 133.0, 133.0, 137.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 174 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_sent]
+INDEX[118, 124] = [137.0, 137.0, 139.0, 139.0, 139.0, 139.0, 142.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 175 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_sent]
+INDEX[127, 133] = [142.0, 145.0, 145.0, 145.0, 145.0, 145.0, 149.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 176 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_sent]
+INDEX[135, 141] = [149.0, 149.0, 151.0, 151.0, 151.0, 151.0, 154.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 177 *******************
+NODE: 8, DATA TYPE [CURRENT_icmp_sent]
+INDEX[140, 146] = [151.0, 154.0, 154.0, 154.0, 154.0, 154.0, 158.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 178 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_recv]
+INDEX[8, 14] = [19.0, 22.0, 22.0, 22.0, 22.0, 22.0, 26.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 179 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_recv]
+INDEX[38, 44] = [61.0, 61.0, 65.0, 65.0, 65.0, 65.0, 71.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 180 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_recv]
+INDEX[51, 57] = [73.0, 73.0, 76.0, 76.0, 76.0, 76.0, 80.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 181 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_recv]
+INDEX[60, 66] = [80.0, 83.0, 83.0, 83.0, 83.0, 83.0, 88.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 182 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_recv]
+INDEX[68, 74] = [88.0, 88.0, 91.0, 91.0, 91.0, 91.0, 96.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 183 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_recv]
+INDEX[77, 83] = [96.0, 96.0, 99.0, 99.0, 99.0, 99.0, 103.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 184 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_recv]
+INDEX[103, 109] = [117.0, 117.0, 120.0, 120.0, 120.0, 120.0, 126.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 185 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_recv]
+INDEX[120, 126] = [134.0, 134.0, 137.0, 137.0, 137.0, 137.0, 142.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 186 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_recv]
+INDEX[138, 144] = [150.0, 153.0, 153.0, 153.0, 153.0, 153.0, 157.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 187 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_recv]
+INDEX[146, 152] = [157.0, 157.0, 160.0, 160.0, 160.0, 160.0, 165.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 188 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_sent]
+INDEX[8, 14] = [26.0, 30.0, 30.0, 30.0, 30.0, 30.0, 36.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 189 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_sent]
+INDEX[38, 44] = [55.0, 55.0, 58.0, 58.0, 58.0, 58.0, 63.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 190 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_sent]
+INDEX[51, 57] = [64.0, 64.0, 66.0, 66.0, 66.0, 66.0, 69.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 191 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_sent]
+INDEX[68, 74] = [74.0, 74.0, 76.0, 76.0, 76.0, 76.0, 79.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 192 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_sent]
+INDEX[81, 87] = [81.0, 81.0, 83.0, 83.0, 83.0, 83.0, 86.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 193 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_sent]
+INDEX[103, 109] = [93.0, 93.0, 95.0, 95.0, 95.0, 95.0, 98.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ ********** OUTLIER No 194 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_sent]
+INDEX[133, 139] = [111.0, 111.0, 115.0, 115.0, 115.0, 115.0, 123.0] 
+
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ .//outputfiles//\FindOutlierChebyshev_metrics_details.csv file saved successfully
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ .//outputfiles//\FindOutlierChebyshev_metrics_summary.csv file saved successfully
+[21:46:01] {D:\GitHub\outliers_platform\find_outliers_platform\utilities\log_module.py:68} INFO - 
+ .//outputfiles//\FindOutlierChebyshev_metrics_critical.csv file saved successfully
+********* OUTLIER No 193 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_sent]
+INDEX[103, 109] = [93.0, 93.0, 95.0, 95.0, 95.0, 95.0, 98.0] 
+ 
+INFO     2020-08-02 21:46:01,424  FindOutlierChebyshev.print_to_console in FindOutlierChebyshev.run   
+ ********** OUTLIER No 194 *******************
+NODE: 9, DATA TYPE [CURRENT_icmp_sent]
+INDEX[133, 139] = [111.0, 111.0, 115.0, 115.0, 115.0, 115.0, 123.0] 
+ 
+INFO     2020-08-02 21:46:01,451  SavePdToFile.run in FindOutlierChebyshev.run   .//outputfiles//\FindOutlierChebyshev_metrics_details.csv file saved successfully 
+INFO     2020-08-02 21:46:01,455  SavePdToFile.run in FindOutlierChebyshev.run   .//outputfiles//\FindOutlierChebyshev_metrics_summary.csv file saved successfully 
+INFO     2020-08-02 21:46:01,459  SavePdToFile.run in FindOutlierChebyshev.run   .//outputfiles//\FindOutlierChebyshev_metrics_critical.csv file saved successfully 
