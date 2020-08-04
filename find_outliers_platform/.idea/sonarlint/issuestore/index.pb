@@ -65,3 +65,5 @@ D
 outputfiles/logs.log,6\c\6ca05f8d379bb21370bdabb411ce78e6fa3f785f
 O
 static_files/confidence_data.py,9\d\9da581c58183638e4da4b8a779181ab7c30fcadc
+U
+%outlier_algorithms/chebyshev_class.py,a\f\afa6debd19cac729d8810556dd18034c6edc6ee4
