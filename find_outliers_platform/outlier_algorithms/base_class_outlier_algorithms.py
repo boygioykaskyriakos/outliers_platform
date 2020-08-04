@@ -56,15 +56,20 @@ class BaseClassOutlierAlgorithms(BaseClassAnalytic):
     def format_metrics_summary(df_metrics_general: pd.DataFrame, df_metrics_critical: pd.DataFrame) -> pd.DataFrame:
         df_metrics_summary = df_metrics_general.groupby([SUBSET_SIZE]).count().reset_index()
 
-        df_metrics_critical = df_metrics_critical[[SUBSET_SIZE, NODE, TOTAL_PANICS]].drop_duplicates().reset_index()
-        df_metrics_critical = df_metrics_critical.groupby([SUBSET_SIZE]).count().reset_index()
+        if not df_metrics_critical.empty:
+            df_metrics_critical = df_metrics_critical[[SUBSET_SIZE, NODE, TOTAL_PANICS]].drop_duplicates().reset_index()
+            df_metrics_critical = df_metrics_critical.groupby([SUBSET_SIZE]).count().reset_index()
 
-        df_metrics_summary = pd.merge(
-            df_metrics_summary[[SUBSET_SIZE, OUTLIER_NO]],
-            df_metrics_critical[[SUBSET_SIZE, TOTAL_PANICS]],
-            on=[SUBSET_SIZE],
-            how='left'
-        )
+            df_metrics_summary = pd.merge(
+                df_metrics_summary[[SUBSET_SIZE, OUTLIER_NO]],
+                df_metrics_critical[[SUBSET_SIZE, TOTAL_PANICS]],
+                on=[SUBSET_SIZE],
+                how='left'
+            )
+        else:
+            df_metrics_summary = df_metrics_summary[[SUBSET_SIZE, OUTLIER_NO]]
+            df_metrics_summary[TOTAL_PANICS] = 0
+
         df_metrics_summary[SUBSET_SIZE] = df_metrics_summary[SUBSET_SIZE].astype(int)
         df_metrics_summary = df_metrics_summary.sort_values([SUBSET_SIZE])
 
@@ -103,15 +108,14 @@ class BaseClassOutlierAlgorithms(BaseClassAnalytic):
 
         df_metrics_details_critical = self.format_metrics_critical(df_metrics_details_general, critical_value)
 
-        if not df_metrics_details_critical.empty:
-            df_metrics_summary = self.format_metrics_summary(df_metrics_details_general, df_metrics_details_critical)
-        else:
-            df_metrics_summary = df_summary_default
+        df_metrics_summary = self.format_metrics_summary(df_metrics_details_general, df_metrics_details_critical)
 
         if df_metrics_details_general.empty:
             df_metrics_details_general = df_general_default
         if df_metrics_details_critical.empty:
             df_metrics_details_critical = df_critical_default
+        if df_metrics_summary.empty:
+            df_metrics_summary = df_summary_default
 
         return df_metrics_details_general, df_metrics_details_critical, df_metrics_summary
 
