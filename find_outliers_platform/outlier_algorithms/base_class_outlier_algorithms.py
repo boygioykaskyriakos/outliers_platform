@@ -28,25 +28,27 @@ class BaseClassOutlierAlgorithms(BaseClassAnalytic):
         )
 
         df = df[df[OUTLIER_NO] > critical_value]
-        df_per_node = df.groupby([SUBSET_SIZE, NODE])[OUTLIER_NO].sum().reset_index()
 
-        df = pd.merge(
-            df[[SUBSET_SIZE, NODE, DATA_TYPE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT, SUBSET]],
-            df_per_node,
-            on=[SUBSET_SIZE, NODE],
-            how='left'
-        )
+        if not df.empty:
+            df_per_node = df.groupby([SUBSET_SIZE, NODE])[OUTLIER_NO].sum().reset_index()
 
-        df[OUTLIER_NO] = df[OUTLIER_NO] / 4
-        df[OUTLIER_NO] = df[OUTLIER_NO].astype(int)
-        df = df.rename(columns={OUTLIER_NO: TOTAL_PANICS})
+            df = pd.merge(
+                df[[SUBSET_SIZE, NODE, DATA_TYPE, INDEX_FIRST_ELEMENT, INDEX_LAST_ELEMENT, SUBSET]],
+                df_per_node,
+                on=[SUBSET_SIZE, NODE],
+                how='left'
+            )
 
-        df[SUBSET_SIZE] = df[SUBSET_SIZE].astype(int)
-        try:
-            df[NODE] = df[NODE].astype(int)
-        except ValueError:
-            pass
-        df = df.sort_values([SUBSET_SIZE, NODE])
+            df[OUTLIER_NO] = df[OUTLIER_NO] / 4
+            df[OUTLIER_NO] = df[OUTLIER_NO].astype(int)
+            df = df.rename(columns={OUTLIER_NO: TOTAL_PANICS})
+
+            df[SUBSET_SIZE] = df[SUBSET_SIZE].astype(int)
+            try:
+                df[NODE] = df[NODE].astype(int)
+            except ValueError:
+                pass
+            df = df.sort_values([SUBSET_SIZE, NODE])
 
         return df
 
@@ -83,7 +85,12 @@ class BaseClassOutlierAlgorithms(BaseClassAnalytic):
 
         return temp_dic_res
 
-    def create_result_dfs(self, final_result: list, critical_value: int) -> tuple:
+    def create_result_dfs(self,
+                          final_result: list, critical_value: int,
+                          df_general_default: pd.DataFrame,
+                          df_critical_default: pd.DataFrame,
+                          df_summary_default: pd.DataFrame) -> tuple:
+
         df_metrics_details_general = pd.DataFrame(final_result)
         df_metrics_details_general[SUBSET_SIZE] = df_metrics_details_general[SUBSET_SIZE].astype(int)
 
@@ -95,7 +102,16 @@ class BaseClassOutlierAlgorithms(BaseClassAnalytic):
         df_metrics_details_general = df_metrics_details_general.sort_values([SUBSET_SIZE, NODE])
 
         df_metrics_details_critical = self.format_metrics_critical(df_metrics_details_general, critical_value)
-        df_metrics_summary = self.format_metrics_summary(df_metrics_details_general, df_metrics_details_critical)
+
+        if not df_metrics_details_critical.empty:
+            df_metrics_summary = self.format_metrics_summary(df_metrics_details_general, df_metrics_details_critical)
+        else:
+            df_metrics_summary = df_summary_default
+
+        if df_metrics_details_general.empty:
+            df_metrics_details_general = df_general_default
+        if df_metrics_details_critical.empty:
+            df_metrics_details_critical = df_critical_default
 
         return df_metrics_details_general, df_metrics_details_critical, df_metrics_summary
 

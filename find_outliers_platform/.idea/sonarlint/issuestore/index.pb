@@ -61,8 +61,6 @@ U
 %utilities/read_csv_to_pd_dataframe.py,4\c\4c1668b5ec23be153727a1562d1641f843c27a9e
 U
 %outlier_algorithms/Chebyshev_class.py,8\9\899109005151ffde4b45f5eaceafde07798d092e
-D
-outputfiles/logs.log,6\c\6ca05f8d379bb21370bdabb411ce78e6fa3f785f
 O
 static_files/confidence_data.py,9\d\9da581c58183638e4da4b8a779181ab7c30fcadc
 U

@@ -120,7 +120,10 @@ class FindOutlierDixon(BaseClassOutlierAlgorithms):
                     self.print_to_console(row, confidence_level)
 
             df_metrics_details_general, df_metrics_details_critical, df_metrics_summary = \
-                self.create_result_dfs(final_result, self.critical_value)
+                self.create_result_dfs(
+                    final_result, self.critical_value,
+                    df_metrics_details_general, df_metrics_details_critical, df_metrics_summary
+                )
 
         # save results to files
         self.save_file.run(
