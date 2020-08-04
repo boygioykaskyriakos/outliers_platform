@@ -31,7 +31,7 @@ if __name__ == "__main__":
     find_outliers_chebyshev_switch = read_ini_obj.get_boolean("ALGORITHMS_TO_RUN", "chebyshev")
     if find_outliers_chebyshev_switch:
         df_data = ReadCSVToDataFrame(
-            field_name="DATA_SET_INFO_SECOND_TYPE", file_path="full_file_path", delimiter="delimiter").run(normal=False)
+            field_name="DATA_SET_INFO_SECOND_TYPE", file_path="full_file_path", delimiter="delimiter").run()
         df_data_grouped = df_data.groupby([NODE, DATA_TYPE])
 
         find_outliers_chebyshev = FindOutlierChebyshev(grouped_data=df_data_grouped)

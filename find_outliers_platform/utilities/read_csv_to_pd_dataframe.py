@@ -7,6 +7,8 @@ from static_files.standard_variable_names import NODE, TIME, DATA_TYPE, VALUES, 
 
 
 class ReadCSVToDataFrame(BaseClassAnalytic):
+    NORMAL_HEADERS = [NODE, TIME, DATA_TYPE, VALUES]
+
     def __init__(self, field_name: str, file_path: str, delimiter=""):
         BaseClassAnalytic.__init__(self)
 
@@ -59,8 +61,17 @@ class ReadCSVToDataFrame(BaseClassAnalytic):
 
         return df
 
-    def run(self, normal=True) -> pd.DataFrame:
-        if normal:
+    def run(self) -> pd.DataFrame:
+        with open(self.file_path, 'r') as in_file:
+            headers = in_file.readline()
+            headers = headers.replace("\n", "")
+
+            if ',' in headers:
+                headers = headers.split(',')
+            else:
+                headers = headers.split()
+
+        if headers == self.NORMAL_HEADERS:
             return self.normal_csv()
         else:
             return self.read_data_columns_to_rows()
