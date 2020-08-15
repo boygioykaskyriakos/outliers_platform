@@ -9,7 +9,10 @@ from static_files.standard_variable_names import VALUES, OUTLIER_NO, SUBSET_SIZE
     ACCEPTABLE_DEVIATION, VALUE_TO_CHECK, OUTLIER_SCORE, NODE, VALUE, KEY
 
 
-class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
+class FindOutlierChebyshevInequality(BaseClassOutlierAlgorithms):
+    """
+    This Class implements the Chebyshev Inequality outlier method
+    """
     def __init__(self, grouped_data: pd.DataFrame):
         super().__init__()
 
@@ -19,14 +22,31 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
         self.critical_value = self.read_ini_file_obj.get_int("CHEBYSHEV_SUBSET_VARIABLES", "critical_value")
         self.OUTPUT_COLUMNS_DETAILS_GENERAL += [OUTLIER_SCORE, ACCEPTABLE_DEVIATION, VALUE_TO_CHECK, MIN_VALUE, MAX_VALUE]
 
-    def get_chebyshev_k(self, probability_threshold):
+    @staticmethod
+    def get_chebyshev_k(probability_threshold: float):
+        """
+        This method calculates the chebyshev K constant based on the probability threshold
+
+        :param probability_threshold: float: the probability threshold
+        :return: float: the chebyshev K
+        """
         if abs(probability_threshold) > 1:
             return 0
 
         k = math.sqrt(1. / (1. - probability_threshold))
         return k
 
-    def chebushev_algo(self, subset: pd.Series, chebyshev_k: float) -> bool:
+    @staticmethod
+    def chebushev_inequality_algorithm(subset: pd.Series, chebyshev_k: float) -> bool:
+        """
+        This method implements the chebysevn inequality algorithm
+        and determines if the current sequence contains an outlier
+
+        :param subset: pd.Series: a subset of numbers
+        :param chebyshev_k: float: the Chebyshev K constant based on probability threshold
+        :return: bool: true if outlier exists false if not
+        """
+
         outlier_score = 0
         subset_statistics = subset.to_list()[:-1]
         value_to_check = subset.to_list()[-1]
@@ -44,8 +64,18 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
         else:
             return False
 
-    def results_to_dict_chebyshev(self, static_n, grp, temp_data, i, chebyshev_k):
-        temp_dic = self.results_to_dict(static_n, grp, temp_data, i)
+    def results_to_dict(self, static_n: int, grp: pd.DataFrame, temp_data: pd.Series, i: int, chebyshev_k: float):
+        """
+        Extend method results to dict, by adding the chebyshev K variable as well
+
+        :param static_n: int: number of elements
+        :param grp: pd.DataFrame: the whole set of all the data for the specific group
+        :param temp_data: pd.Series: the temporary data of the group
+        :param i: int: the starting row of the first element of the set
+        :param chebyshev_k: float: the Chebyshev K constant based on probability threshold
+        :return: dict: the new dictionary of results
+        """
+        temp_dic = super(FindOutlierChebyshevInequality, self).results_to_dict(static_n, grp, temp_data, i)
 
         temp_data = temp_data.tolist()
         subset_statistics = temp_data[:-1]
@@ -68,22 +98,34 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
 
     def get_results_per_subset(
             self, static_n: int, grp: pd.DataFrame, result: list, chebyshev_k: float) -> list:
+        """
+        This method returns the results for the specific static_n of elements for the specific group
+
+        :param static_n: int: number of elements
+        :param grp: pd.DataFrame: the whole set of all the data for the specific group
+        :param result: list: a list of all the results of other subsets
+        :param chebyshev_k: float: the Chebyshev K constant based on probability threshold
+        :return: list: a list of results
+        """
 
         test_set = grp[VALUES]
 
         # list comprehension with UDF optimized on pd.DataFrame
         # read it like: for i in range if condition is true then...
         result += [
-            self.results_to_dict_chebyshev(static_n, grp, test_set[i+static_n:i + 2*static_n], i, chebyshev_k)
-            for i in range(len(test_set)-2*static_n + 1)
-            if self.chebushev_algo(test_set[i+static_n:i + 2*static_n], chebyshev_k) is True
+            self.results_to_dict(static_n, grp, test_set[i + static_n:i + 2 * static_n], i, chebyshev_k)
+            for i in range(len(test_set) - 2 * static_n + 1)
+            if self.chebushev_inequality_algorithm(test_set[i + static_n:i + 2 * static_n], chebyshev_k) is True
         ]
 
         return result
 
     def run(self, confidence_level: dict) -> None:
         """
-        The main method of the class that saves to file the outliers according the Chebyshev algorithm
+        The main method of the class that:
+            - implements the Chebyshev Inequality algorithm
+            - saves the results to file
+
         :return: None
         """
 
