@@ -72,6 +72,15 @@ class FindOutlierDixon(BaseClassOutlierAlgorithms):
     def get_results_per_subset(
             self, static_n: int, grp: pd.DataFrame, confidence: dict, result: list) -> list:
 
+        """
+        This method returns the results for the specific static_n of elements for the specific group
+
+        :param static_n: int: number of elements
+        :param grp: pd.DataFrame: the whole set of all the data for the specific group
+        :param result: list: a list of all the results of other subsets
+        :return: list: a list of results
+        """
+
         test_set = grp[VALUES]
 
         # list comprehension with UDF optimized on pd.DataFrame
