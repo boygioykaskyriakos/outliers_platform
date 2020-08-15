@@ -3,6 +3,7 @@ import os
 import inspect
 
 from utilities.read_ini_file import ReadIniFile
+from utilities.file_folder_creation_utilities import create_output_path
 from static_files.standard_variable_names import GLOBALS, OUTPUT_PATH, LOG_FILE_NAME
 
 
@@ -10,9 +11,7 @@ class Logger:
     read_ini_file_obj = ReadIniFile()
     file_folder_path = read_ini_file_obj.get_str(GLOBALS, OUTPUT_PATH)
 
-    if not os.path.exists(file_folder_path):
-        os.makedirs(file_folder_path)
-
+    create_output_path(file_folder_path)
     filename_output = "\\".join([file_folder_path, LOG_FILE_NAME + ".log"])
 
     # set up logging to file
