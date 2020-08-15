@@ -77,6 +77,8 @@ class FindOutlierDixon(BaseClassOutlierAlgorithms):
 
         :param static_n: int: number of elements
         :param grp: pd.DataFrame: the whole set of all the data for the specific group
+        :param confidence: dict: on key with name 'KEY' contains the title of the confidence
+        and on key with name 'VALUES' contains the dixon-q-test comparator values
         :param result: list: a list of all the results of other subsets
         :return: list: a list of results
         """
@@ -93,12 +95,12 @@ class FindOutlierDixon(BaseClassOutlierAlgorithms):
 
         return result
 
-    def run(self, confidence_level: dict) -> None:
+    def run(self, confidence: dict) -> None:
         """
         The main method of the class that saves to file the outliers according the dixon-q-test algorithm
 
-        :param confidence_level: dict: as key contains the title of the confidence
-        and as values contains the dixon-q-test comparator values
+        :param confidence: dict: on key with name 'KEY' contains the title of the confidence
+        and on key with name 'VALUES' contains the dixon-q-test comparator values
         :return: None
         """
 
@@ -112,7 +114,7 @@ class FindOutlierDixon(BaseClassOutlierAlgorithms):
         # apply logic main loop
         while static_n <= self.static_n_maximum:
             self.grouped_data.apply(
-                lambda grp: self.get_results_per_subset(static_n, grp, confidence_level, final_result)
+                lambda grp: self.get_results_per_subset(static_n, grp, confidence, final_result)
             )
             static_n += 1
 
@@ -123,7 +125,7 @@ class FindOutlierDixon(BaseClassOutlierAlgorithms):
 
             if self.print_debug:
                 for row in final_result:
-                    self.print_to_console(row, confidence_level)
+                    self.print_to_console(row, confidence)
 
             df_metrics_details_general, df_metrics_details_critical, df_metrics_summary = \
                 self.create_result_dfs(
@@ -134,13 +136,13 @@ class FindOutlierDixon(BaseClassOutlierAlgorithms):
         # save results to files
         self.save_file.run(
             df_metrics_details_general[self.OUTPUT_COLUMNS_DETAILS_GENERAL],
-            confidence_level[KEY] + "_metrics_details_generic"
+            confidence[KEY] + "_metrics_details_generic"
         )
         self.save_file.run(
             df_metrics_details_critical[self.OUTPUT_COLUMNS_DETAILS_CRITICAL],
-            confidence_level[KEY] + "_metrics_details_critical"
+            confidence[KEY] + "_metrics_details_critical"
         )
         self.save_file.run(
-            df_metrics_summary[self.OUTPUT_COLUMNS_SUMMARY], confidence_level[KEY] + "_metrics_summary"
+            df_metrics_summary[self.OUTPUT_COLUMNS_SUMMARY], confidence[KEY] + "_metrics_summary"
         )
 
