@@ -5,6 +5,11 @@ from static_files.standard_variable_names import MAIN_CONFIG
 
 
 class ReadIniFile:
+    """
+    This Class reads the configuration file with .ini format
+    """
+
+    # setup the configuration file
     config_file_path = os.path.join(os.getcwd(), MAIN_CONFIG)
     config = ConfigParser()
     config.read(config_file_path)
