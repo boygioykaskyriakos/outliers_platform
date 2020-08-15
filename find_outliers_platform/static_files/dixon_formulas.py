@@ -71,7 +71,14 @@ r22 = {
 }
 
 
-def generic_formula_dixon_q_test(r, subset):
+def generic_formula_dixon_q_test(r: dict, subset: list):
+    """
+    This function creates the numerators and denominators needed for the dixon formula
+
+    :param r: dict: the r based on population of examination
+    :param subset: list: a sequence of numbers
+    :return: tuple (of floats): upper numerator/denominator, lower numerator/denominator
+    """
     upper_numerator = r[UPPER_NUMERATOR](subset)
     upper_denominator = r[UPPER_DENOMINATOR](subset)
     lower_numerator = r[LOWER_NUMERATOR](subset)

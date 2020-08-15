@@ -7,9 +7,19 @@ from static_files.standard_variable_names import NODE, TIME, DATA_TYPE, VALUES, 
 
 
 class ReadCSVToDataFrame(BaseClassAnalytic):
+    """
+    This Child Class reads a csv from a path and converts it to a pandas DataFrame object
+    """
     NORMAL_HEADERS = [NODE, TIME, DATA_TYPE, VALUES]
 
     def __init__(self, field_name: str, file_path: str, delimiter=""):
+        """
+        Initialize instance variables
+
+        :param field_name: str: the ini title
+        :param file_path: str: the ini field name
+        :param delimiter: the delimiter of the csv file
+        """
         BaseClassAnalytic.__init__(self)
 
         self.file_path = self.read_ini_file_obj.get_str(field_name, file_path)
@@ -20,6 +30,11 @@ class ReadCSVToDataFrame(BaseClassAnalytic):
             self.delimiter = ""
 
     def normal_csv(self):
+        """
+        This method determines the delimiter
+
+        :return: pd.DataFrame: returns the csv in pd.Dataframe form
+        """
         if len(self.delimiter) > 0:
             df = pd.read_csv(self.file_path, delimiter=self.delimiter)
         else:
@@ -28,6 +43,10 @@ class ReadCSVToDataFrame(BaseClassAnalytic):
         return df
 
     def read_data_columns_to_rows(self) -> pd.DataFrame:
+        """
+        This method reads the csv file with the build in open method
+        :return: pd.DataFrame: return the csv as pd.DataFrame object
+        """
         with open(self.file_path, 'r') as in_file:
             data = []
             headers = in_file.readline().split()
@@ -62,6 +81,10 @@ class ReadCSVToDataFrame(BaseClassAnalytic):
         return df
 
     def run(self) -> pd.DataFrame:
+        """
+        The main method of the class, reads the csv and returns a pandas DataFrame object.
+        :return: pd.DataFrame: csv to pd.DataFrame object
+        """
         with open(self.file_path, 'r') as in_file:
             headers = in_file.readline()
             headers = headers.replace("\n", "")
