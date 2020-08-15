@@ -109,7 +109,7 @@ class FindOutlierChebyshev(BaseClassOutlierAlgorithms):
 
             if self.print_debug:
                 for row in final_result:
-                    self.print_to_console(row)
+                    self.print_to_console(row, confidence_level)
 
             df_metrics_details_general, df_metrics_details_critical, df_metrics_summary = \
                 self.create_result_dfs(
