@@ -8,7 +8,7 @@ class SavePdToCSVFile:
     """
     This class saves a pandas data frame to csv file
     """
-    def __init__(self, output_path):
+    def __init__(self, output_path: str):
         """
         Initialization of instance variable
         :param output_path: The output path that the file will be saved

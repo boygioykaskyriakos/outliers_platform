@@ -1,5 +1,4 @@
 import logging
-import os
 import inspect
 
 from utilities.read_ini_file import ReadIniFile
@@ -8,6 +7,9 @@ from static_files.standard_variable_names import GLOBALS, OUTPUT_PATH, LOG_FILE_
 
 
 class Logger:
+    """
+    This class is the log class that logs into console and to a log file
+    """
     read_ini_file_obj = ReadIniFile()
     file_folder_path = read_ini_file_obj.get_str(GLOBALS, OUTPUT_PATH)
 
@@ -29,10 +31,6 @@ class Logger:
     # # set up logging to console
     stream_handler = logging.StreamHandler()
     stream_handler.setLevel(logging.INFO)
-    # # set a format which is simpler for console use
-    # formatter = logging.Formatter('%(levelname)-8s %(asctime)s \n %(message)s ')
-    # file_handler.setFormatter(formatter)
-    # stream_handler.setFormatter(formatter)
     # # add the handler to the root logger
     logging.getLogger('').addHandler(file_handler)
     logging.getLogger('').addHandler(stream_handler)
